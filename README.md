@@ -5,17 +5,21 @@ Login/logout:
 - Login/logout
 - màn hình home..(phân quyền)
 - reminder password/Cấp lại password
+
 Giáo viên	
 - Tìm kiếm, xem chi tiết thông tin giáo viên
 - Thêm mới giáo viên
 - Sửa thôgn tin giáo viên
+
 Sinh viên	
 - Tìm kiếm, xem chi tiết,xóa thông tin về sinh viên.
 - Thêm sinh viên
 - Sửa thông tin sinh viên
+
 Môn học	
 - Tìm kiếm, xóa môn học.
 - Sửa/xóa môn học
+
 Quản lý điểm	
 - Tìm kiếm/filter điểm theo sinh viên OR theo môn học.
 - Tìm kiếm nâng cao
