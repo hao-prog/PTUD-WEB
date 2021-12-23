@@ -21,8 +21,8 @@ class Database
         }
     }
 
-    public function beginTransaction()
+    public function connectionPdo()
     {
-        $this->stmt = $this->conn->beginTransaction();
+        $this->stmt = $this->conn->connectionPdo();
     }
 }
