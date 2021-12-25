@@ -5,9 +5,9 @@
 		<link rel="stylesheet" type="text/css" href="web/css/home.css?v=<?php echo time(); ?>">
         <?php   
             header('Content-Type: text/html; charset=utf-8');
-            // require_once 'app/controller/login_valid.php';
-            // include 'expire.php';
-            // expire("");
+            require_once 'app/controller/login_valid.php';
+            include 'expire.php';
+            expire("");
         ?>
     </head>
 
