@@ -27,7 +27,9 @@
                 </td>
             </tr>
         </table>
-        <label>Số bản ghi tìm thấy: <?php echo $count = $sql_scores->rowCount(); ?></label>
+        <label>Số bản ghi tìm thấy: <?php if ($sql_scores != null) {
+                                        echo $count = $sql_scores->rowCount();
+                                    } else echo '0' ?></label>
     </form>
     <table class="table-search">
         <tr>

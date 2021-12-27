@@ -1,8 +1,11 @@
 
 <?php
 
-$sql_scores = getAllScores();
+$sql_scores = [];
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (isset($_GET["student"]) || isset($_GET["subject"]) || isset($_GET["teacher"])) {
+        $sql_scores = getAllScores();
+    }
     isset($_GET["student"]) ? $student = rtrim($_GET["student"]) : $student = null;
     isset($_GET["subject"]) ? $subject = rtrim($_GET["subject"]) : $subject = null;
     isset($_GET["teacher"]) ? $teacher = rtrim($_GET["teacher"]) : $teacher = null;
