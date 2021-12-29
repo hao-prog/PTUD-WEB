@@ -3,7 +3,7 @@
 <head>
     <title>Tìm kiếm điểm</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="./web/css/SearchScores.css" rel="stylesheet">
+    <link href="./web/css/quanlydiem/SearchScores.css" rel="stylesheet">
 </head>
 
 <fieldset>
@@ -51,7 +51,7 @@
                 <td><?php echo $row[4] ?></td>
                 <td style="width:150px">
                     <button class='btn btn-delete' onclick="deleteScore('<?php echo $row[1] ?>', '<?php echo $row[0] ?>'); ">Xóa</button>
-                    <button class="btn btn-edit">Sửa</button>
+                    <button class="btn btn-edit" onclick="window.location = `searchScore.php?action=edit_input&id=${<?php echo $row[0] ?>}`;">Sửa</button>
                 </td>
             </tr>
         <?php } ?>

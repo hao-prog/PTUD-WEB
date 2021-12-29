@@ -1,0 +1,157 @@
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.form_edit_score {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.form_edit_score_fieldset {
+  width: 800px;
+  border-color: #73a5d8;
+  background-color: white;
+  border: 2px solid #6794c2;
+  padding: 50px;
+  margin: auto;
+}
+
+.student,
+.subject,
+.teacher,
+.score,
+.comment {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.submit {
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+}
+
+.student .student_label,
+.subject .subject_label,
+.teacher .teacher_label,
+.score .score_label,
+.comment .comment_label {
+  padding: 5px 10px 5px 0;
+  min-width: 122px;
+  justify-content: center;
+}
+
+.student .spans,
+.subject .spans,
+.teacher .spans,
+.score .spans,
+.comment .spans {
+  padding: 5px 10px 5px 10px;
+  border: 1.5px solid rgba(39, 125, 238, 0.89);
+  outline: none;
+  background-color: #dbebf3;
+  border-radius: 0;
+  border-radius: 2px;
+  margin-left: 60px;
+  width: 40%;
+}
+.comment .spans {
+  margin-left: 57px;
+  width: 60%;
+}
+
+.score .spans {
+  width: 20%;
+}
+
+.student .student_select,
+.subject .subject_select,
+.teacher .teacher_select {
+  padding: 5px 10px 5px 10px;
+  border: 1.5px solid rgba(39, 125, 238, 0.89);
+  outline: none;
+  background-color: #dbebf3;
+  border-radius: 0;
+  border-radius: 2px;
+  margin-left: 60px;
+  width: 40%;
+}
+
+.score .score_select {
+  padding: 5px 10px 5px 10px;
+  border: 1.5px solid rgba(39, 125, 238, 0.89);
+  background-color: #dbebf3;
+  outline: none;
+  border-radius: 2px;
+  border-radius: 0;
+  margin-left: 60px;
+  width: 20%;
+}
+
+.comment textarea {
+  padding: 5px 10px 5px 10px;
+  border: 1.5px solid rgba(39, 125, 238, 0.89);
+  outline: none;
+  background-color: #dbebf3;
+  border-radius: 0;
+  border-radius: 2px;
+  margin-left: 58px;
+  width: 60%;
+}
+
+.submit .btnSubmit_edit {
+  background-color: #5b9bd5;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 8px 28px 7px;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 60px;
+  width: 200px;
+}
+
+.submit .btnSubmit_edit:hover {
+  background-color: #ed7d31;
+  cursor: pointer;
+}
+
+.submit .btnEditScore,
+.submit .btnConfirm {
+  font-size: 16px;
+  margin-top: 40px;
+  float: left;
+  margin-left: 140px;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #73a5d8;
+  border: 2px solid #6794c2;
+  border-radius: 5px;
+  width: 200px;
+  height: 60px;
+}
+
+.submit .btnEditScore:hover,
+.submit .btnConfirm:hover {
+  background-color: #ed7d31;
+  cursor: pointer;
+}
+
+.error_score {
+  color: red;
+  margin-bottom: 12px;
+}
+
+.fieldset_score_edit_complete {
+  border-color: #73a5d8;
+  background-color: white;
+  border: 2px solid #6794c2;
+  padding: 50px;
+  margin: auto;
+  justify-content: center;
+  width: 1200px;
+  height: 260px;
+}
