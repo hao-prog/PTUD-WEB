@@ -14,7 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["teacher_specialized"] = $_POST["teacher_specialized"];
     $_SESSION["teacher_degree"] = $_POST["teacher_degree"];
     $_SESSION["teacher_description"] = $_POST["teacher_description"];
-    if ($_FILES["teacher_avatar"]["name"]) {
+    if ($_FILES["teacher_avatar"]["name"]) {  // user uploaded a file
+        unset($_SESSION['had_avatar_tmp']);
+        if (
+            isset($_SESSION["teacher_avatar"]) &&
+            $_FILES["teacher_avatar"]["name"] != $_SESSION["teacher_avatar"]
+        ) {
+            unlink('../../../web/avatar/teacher_tmp/' . $_SESSION["teacher_avatar"]);
+        }
         $_SESSION["teacher_avatar"] = $_FILES["teacher_avatar"]["name"];
     }
 
@@ -49,14 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!file_exists('../../../web/avatar/teacher_tmp')) {
         mkdir('../../../web/avatar/teacher_tmp', 0777, true);
     }
-    
+
     if (!isset($_SESSION['had_avatar_tmp'])) {
         if (
             isset($_SESSION["teacher_avatar"]) &&
             getimagesize($_FILES["teacher_avatar"]["tmp_name"]) == false
         ) {
             $_SESSION["teacher_avatar_error"] = "Avatar phải là file ảnh.";
-        } 
+        }
 
         if (isset($_SESSION["teacher_avatar"])) {
             $target_dir = "../../../web/avatar/teacher_tmp/";
@@ -66,7 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (!$_SESSION["teacher_name_error"]
+    if (
+        !$_SESSION["teacher_name_error"]
         && !$_SESSION["teacher_specialized_error"]
         && !$_SESSION["teacher_degree_error"]
         && !$_SESSION["teacher_description_error"]
