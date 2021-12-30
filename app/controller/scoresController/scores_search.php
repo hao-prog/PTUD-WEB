@@ -49,6 +49,12 @@ switch ($action) {
                     $scoreData = isset($_POST['score']) ? $_POST['score'] : '';
                     $commentData = isset($_POST['comment']) ? $_POST['comment'] : '';
 
+                    $_SESSION["student"] = $studentData;
+                    $_SESSION["subject"] = $subjectData;
+                    $_SESSION["teacher"] = $teacherData;
+                    $_SESSION["score"] = $scoreData;
+                    $_SESSION["comment"] = $commentData;
+
                     // Kiểm tra định dạng dữ liệu
                     if (empty($studentData)) {
                         $error['student'] = 'Hãy chọn sinh viên.';
@@ -61,14 +67,9 @@ switch ($action) {
                     } elseif (empty($commentData)) {
                         $error['comment'] = 'Hãy nhập comment chi tiết';
                     } elseif (!$error) {
-                        $_SESSION["student"] = $studentData;
-                        $_SESSION["subject"] = $subjectData;
-                        $_SESSION["teacher"] = $teacherData;
-                        $_SESSION["score"] = $scoreData;
-                        $_SESSION["comment"] = $commentData;
                         header("Location: searchScore.php?action=edit_comfirm&id={$id}");
                         // exit();
-                    }
+                    } 
                 }
             }
             require_once('app/view/quanlydiem/EditScore/score_edit_input.php');

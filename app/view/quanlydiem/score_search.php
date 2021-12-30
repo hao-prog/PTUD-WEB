@@ -5,7 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="./web/css/quanlydiem/SearchScores.css" rel="stylesheet">
 </head>
+<?php
 
+session_start();
+unset($_SESSION['student']);
+unset($_SESSION['subject']);
+unset($_SESSION['teacher']);
+unset($_SESSION['score']);
+unset($_SESSION['comment']);
+?>
 <fieldset>
     <form method="GET" name="scoresearch">
         <table class="box_search">
