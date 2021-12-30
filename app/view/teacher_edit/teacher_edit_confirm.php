@@ -1,6 +1,6 @@
 <?php
-require_once '../../app/common/define.php';
-require_once '../../app/model/teacher.php';
+require_once '../../../app/common/define.php';
+require_once '../../../app/model/teacher.php';
 session_start();
 
 $id = isset($_SESSION["teacher_id"]) ? $_SESSION["teacher_id"] : '';
@@ -12,9 +12,9 @@ $teacher_description = isset($_SESSION["teacher_description"]) ? $_SESSION['teac
 $teacher_avatar = '';
 if (isset($_SESSION['teacher_avatar'])) {
     $teacher_avatar = $_SESSION['teacher_avatar'];
-    $target_avatar_file = '../../web/avatar/teacher_tmp/'.$_SESSION['teacher_avatar'];
+    $target_avatar_file = '../../../web/avatar/teacher_tmp/'.$_SESSION['teacher_avatar'];
 } else {
-    $target_avatar_file = '../../web/avatar/teacher/'.$id.'/'.$teacher['avatar'];
+    $target_avatar_file = '../../../web/avatar/teacher/'.$id.'/'.$teacher['avatar'];
 }
 
 ?>
@@ -22,11 +22,11 @@ if (isset($_SESSION['teacher_avatar'])) {
 <html>
 
 <head>
-    <link rel="stylesheet" href="../../web/css/teacher_edit_styles.css">
-    <script src="../../web/js/teacher_edit_scripts.js"></script>
+    <link rel="stylesheet" href="../../../web/css/teacher_edit_styles.css">
+    <script src="../../../web/js/teacher_edit_scripts.js"></script>
 </head>
 
-<form method='post' action='../../app/controller/teacher_edit_confirm_C.php' enctype="multipart/form-data">
+<form method='post' action='../../../app/controller/teacher_edit/teacher_edit_confirm_C.php' enctype="multipart/form-data">
     <div class="edit_form">
         <div class="error_message">
         </div>

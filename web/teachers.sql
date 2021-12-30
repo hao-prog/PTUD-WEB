@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- Dumping data for table `teachers`
 --
 
-INSERT INTO `teachers` (`id`, `name`, `avatar`, `description`, `specialized`, `degree`, `updated`, `created`) VALUES
-(0, 'Thầy Huấn Rose', 'thayHuanRose.jpg', 'Thầy dạy môn Giáo dục công dân', '001', '001', '2021-12-30 14:07:08', '2021-12-30 14:01:41'),
-(3, 'Phan Tấn Trung', 'teacher_1.jpg', 'Đẹp trai, tài năng, tư duy đỉnh cao, tố chất lãnh đạo là những thứ mà Thầy Giáo Ba KHÔNG có', '002', '003', '2021-12-30 14:07:04', '2021-12-30 14:01:41'),
-(4, 'Cô giáo Minh Thu', 'teacher_2.jpg', 'Cô dạy môn Vật lý rất hay', '001', '004', '2021-12-30 14:06:57', '2021-12-30 14:01:41');
+INSERT INTO `teachers` (`id`, `name`, `avatar`, `description`, `specialized`, `degree`) VALUES
+(1, 'Thầy Huấn Rose', 'thayHuanRose.jpg', 'Thầy dạy môn Giáo dục công dân', '001', '001'),
+(3, 'Phan Tấn Trung', 'teacher_1.jpg', 'Đẹp trai, tài năng, tư duy đỉnh cao, tố chất lãnh đạo là những thứ mà Thầy Giáo Ba KHÔNG có', '002', '003'),
+(4, 'Cô giáo Minh Thu', 'teacher_2.jpg', 'Cô dạy môn Vật lý rất hay', '001', '004');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

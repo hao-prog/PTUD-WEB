@@ -1,5 +1,5 @@
 <?php
-require_once '../../app/model/teacher.php';
+require_once '../../../app/model/teacher.php';
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,16 +12,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_SESSION['teacher_avatar'])) {
         if (
-            !file_exists('../../web/avatar/teacher/' . $id . '/' . $_SESSION['teacher_avatar'])
+            !file_exists('../../../web/avatar/teacher/' . $id . '/' . $_SESSION['teacher_avatar'])
             && $teacher_avatar
         ) {
-            unlink('../../web/avatar/teacher/' . $id . '/' . $teacher_avatar); // delete old file
+            unlink('../../../web/avatar/teacher/' . $id . '/' . $teacher_avatar); // delete old file
         }
         $teacher_avatar = $_SESSION['teacher_avatar']; // new avatar file name
-        $cur_avatar_dir = '../../web/avatar/teacher_tmp/' . $_SESSION['teacher_avatar'];
-        $target_avatar_dir = '../../web/avatar/teacher/' . $id . '/' . $_SESSION['teacher_avatar'];
-        if (!file_exists('../../web/avatar/teacher/' . $id)) {
-            mkdir('../../web/avatar/teacher/' . $id, 0777, true);
+        $cur_avatar_dir = '../../../web/avatar/teacher_tmp/' . $_SESSION['teacher_avatar'];
+        $target_avatar_dir = '../../../web/avatar/teacher/' . $id . '/' . $_SESSION['teacher_avatar'];
+        if (!file_exists('../../../web/avatar/teacher/' . $id)) {
+            mkdir('../../../web/avatar/teacher/' . $id, 0777, true);
         }
         rename($cur_avatar_dir, $target_avatar_dir);
     }
@@ -46,5 +46,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($_SESSION['teacher_avatar']);
     unset($_SESSION['had_avatar_tmp']);
 
-    header("Location: ../../app/view/teacher_edit_complete.php");
+    header("Location: ../../../app/view/teacher_edit/teacher_edit_complete.php");
 }
