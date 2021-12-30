@@ -33,7 +33,7 @@ if (isset($_POST['submitaddScore'])) {
         $error['comment'] = 'Hãy nhập comment chi tiết';
     }
     if (!$error) {
-        header("Location: addScore.php?action=add_comfirm");
+        header("Location: add_score.php?action=add_comfirm");
         // exit();
     }
 }
@@ -57,7 +57,7 @@ switch ($action) {
                 $description = $_SESSION["add_comment"];
                 if (isset($student_id) && isset($subject_id) && isset($teacher_id) && isset($score) && isset($description)) {
                     addScores($student_id, $teacher_id, $subject_id, $score, $description);
-                    header("Location: addScore.php?action=add_complete");
+                    header("Location: add_score.php?action=add_complete");
                 }
             }
             require_once('app/view/quanlydiem/AddScore/score_add_confirm.php');

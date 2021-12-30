@@ -4,6 +4,8 @@
     <title>Tìm kiếm điểm</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="./web/css/quanlydiem/SearchScores.css" rel="stylesheet">
+    <script src="web/js/score_search_scripts.js"></script>
+
 </head>
 <?php
 
@@ -59,23 +61,13 @@ unset($_SESSION['comment']);
                 <td><?php echo $row[4] ?></td>
                 <td style="width:150px">
                     <button class='btn btn-delete' onclick="deleteScore('<?php echo $row[1] ?>', '<?php echo $row[0] ?>'); ">Xóa</button>
-                    <button class="btn btn-edit" onclick="window.location = `searchScore.php?action=edit_input&id=${<?php echo $row[0] ?>}`;">Sửa</button>
+                    <button class="btn btn-edit" onclick="window.location = `search_score.php?action=edit_input&id=${<?php echo $row[0] ?>}`;">Sửa</button>
                 </td>
             </tr>
         <?php } ?>
     </table>
 </fieldset>
 </body>
-<script>
-    function deleteScore(student, id) {
 
-        if (confirm(`Bạn chắc chắn muốn xóa điểm của sinh viên ${student}?`)) {
-            window.location = `searchScore.php?action=delete&id=${id}`;
-            return true;
-        } else {
-            return false;
-        }
-    }
-</script>
 
 </html>
