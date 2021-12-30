@@ -50,9 +50,9 @@ function getScoresID($id)
 function addScores($student_id, $teacher_id, $subject_id, $score, $description)
 {
     global $db;
-    $sql = "INSERT INTO scores VALUES ('', '" . $student_id . "', '" . $teacher_id . "', '" . $subject_id . "', '" . $score . "', '" . $description . "','','" . date("Y-m-d H:i:s") . "')";
+    $sql = "INSERT INTO scores VALUES ('', '$student_id', '$teacher_id', '$subject_id', '$score', '$description','','" . date("Y-m-d H:i:s") . "')";
     $add_score = $db->conn->prepare($sql);
-    $add_score->execute($sql);
+    $add_score->execute([$student_id, $teacher_id, $subject_id, $score, $description]);
 
     return $add_score;
 }

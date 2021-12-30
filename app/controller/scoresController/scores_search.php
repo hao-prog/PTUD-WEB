@@ -69,7 +69,7 @@ switch ($action) {
                     } elseif (!$error) {
                         header("Location: searchScore.php?action=edit_comfirm&id={$id}");
                         // exit();
-                    } 
+                    }
                 }
             }
             require_once('app/view/quanlydiem/EditScore/score_edit_input.php');
@@ -77,13 +77,24 @@ switch ($action) {
         }
     case 'edit_comfirm': {
             if (isset($_GET["id"])) {
+                session_start();
                 $id = $_GET["id"];
                 $dataScore = getScoresID($id);
                 $student = getAllstudents();
                 $teacher = getAllteachers();
                 $subject = getAllsubjects();
+
                 if (isset($_POST['btnSubmitConfirm'])) {
-                    header("Location: searchScore.php?action=edit_complete&id={$id}");
+                    $student_id = $_SESSION["student"];
+                    $subject_id = $_SESSION["subject"];
+                    $teacher_id = $_SESSION["teacher"];
+                    $score_id = $_SESSION["score"];
+                    $comment_id = $_SESSION["comment"];
+
+                    if (isset($student_id) && isset($subject_id) && isset($teacher_id) && isset($score_id) && isset($comment_id)) {
+                        $updateScore = updateScores($id, $student_id, $teacher_id, $subject_id, $score_id, $comment_id);
+                        header("Location: searchScore.php?action=edit_complete&id={$id}");
+                    }
                 }
                 require_once('app/view/quanlydiem/EditScore/score_edit_confirm.php');
                 break;
@@ -91,10 +102,9 @@ switch ($action) {
         }
     case 'edit_complete': {
             if (isset($_GET["id"])) {
+                session_start();
                 $id = $_GET["id"];
                 $student = getAllstudents();
-                if (isset($_POST['btnSubmitConfirm']))
-                    header("Location: searchScore.php?action=edit_complete&id={$id}");
                 require_once('app/view/quanlydiem/EditScore/score_edit_complete.php');
                 break;
             }

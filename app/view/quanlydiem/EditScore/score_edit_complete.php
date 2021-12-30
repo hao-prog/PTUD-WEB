@@ -10,29 +10,18 @@
 </head>
 
 <?php
-session_start();
+
 foreach ($student as $key => $value) {
     if ($value['id'] == ($_SESSION["student"])) {
         $name_student = $value['name'];
     }
 }
 
-$student = $_SESSION['student'] ?? '';
-$subject = $_SESSION['subject'] ?? '';
-$teacher = $_SESSION['teacher'] ?? '';
-$score = $_SESSION['score'] ?? '';
-$comment = $_SESSION['comment'] ?? '';
-
-
-if ($student != '' && $subject != '' && $teacher != '' && $score != '' && $comment != '') {
-    $updateScore = updateScores($id, $_SESSION["student"], $_SESSION["teacher"], $_SESSION["subject"], $_SESSION["score"], $_SESSION["comment"]);
-
-    unset($_SESSION['student']);
-    unset($_SESSION['subject']);
-    unset($_SESSION['teacher']);
-    unset($_SESSION['score']);
-    unset($_SESSION['comment']);
-}
+unset($_SESSION["student"]);
+unset($_SESSION["subject"]);
+unset($_SESSION["teacher"]);
+unset($_SESSION["score"]);
+unset($_SESSION["comment"]);
 
 ?>
 
