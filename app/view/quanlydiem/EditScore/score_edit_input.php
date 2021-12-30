@@ -8,6 +8,24 @@
     <link href="./web/css/quanlydiem/editScore.css" rel="stylesheet">
     <title>Edit Score</title>
 </head>
+<?php
+
+if (isset($_SESSION["student"])) {
+    $dataScore[0][1] = $_SESSION["student"];
+}
+if (isset($_SESSION["teacher"])) {
+    $dataScore[0][2] = $_SESSION["teacher"];
+}
+if (isset($_SESSION["subject"])) {
+    $dataScore[0][3] = $_SESSION["subject"];
+}
+if (isset($_SESSION["score"])) {
+    $dataScore[0][4] = $_SESSION["score"];
+}
+if (isset($_SESSION["comment"])) {
+    $dataScore[0][5] = $_SESSION["comment"];
+}
+?>
 
 <body>
     <form method="POST" action="" class="form_edit_score">
