@@ -24,7 +24,7 @@ switch ($action) {
             if (isset($_GET["id"])) {
                 $id = $_GET["id"];
                 $deleteS = deleteScores($id);
-                header("location: searchScore.php");
+                header("location: search_score.php");
             }
             // require_once('app/view/quanlydiem/deleteScoreView.php');
             break;
@@ -67,7 +67,7 @@ switch ($action) {
                     } elseif (empty($commentData)) {
                         $error['comment'] = 'Hãy nhập comment chi tiết';
                     } elseif (!$error) {
-                        header("Location: searchScore.php?action=edit_comfirm&id={$id}");
+                        header("Location: search_score.php?action=edit_comfirm&id={$id}");
                         // exit();
                     }
                 }
@@ -93,7 +93,7 @@ switch ($action) {
 
                     if (isset($student_id) && isset($subject_id) && isset($teacher_id) && isset($score_id) && isset($comment_id)) {
                         $updateScore = updateScores($id, $student_id, $teacher_id, $subject_id, $score_id, $comment_id);
-                        header("Location: searchScore.php?action=edit_complete&id={$id}");
+                        header("Location: search_score.php?action=edit_complete&id={$id}");
                     }
                 }
                 require_once('app/view/quanlydiem/EditScore/score_edit_confirm.php');
