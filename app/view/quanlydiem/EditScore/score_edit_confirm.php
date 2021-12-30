@@ -8,9 +8,6 @@
     <link href="./web/css/quanlydiem/editScore.css" rel="stylesheet">
     <title>Edit Score Confirm</title>
 </head>
-<?php
-session_start();
-?>
 
 <body>
     <form method="POST" action="" class="form_edit_score">

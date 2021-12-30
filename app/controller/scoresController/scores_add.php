@@ -1,5 +1,42 @@
 <?php
 
+session_start();
+$error = array();
+$studentData = $subjectData = $teacherData = $scoreData = $commentData = "";
+if (isset($_POST['submitaddScore'])) {
+    // Lấy dữ liệu
+    $studentData = isset($_POST['student']) ? $_POST['student'] : '';
+    $subjectData = isset($_POST['subject']) ? $_POST['subject'] : '';
+    $teacherData = isset($_POST['teacher']) ? $_POST['teacher'] : '';
+    $scoreData = isset($_POST['score']) ? $_POST['score'] : '';
+    $commentData = isset($_POST['comment']) ? $_POST['comment'] : '';
+
+    $_SESSION["add_student"] = $studentData;
+    $_SESSION["add_subject"] = $subjectData;
+    $_SESSION["add_teacher"] = $teacherData;
+    $_SESSION["add_score"] = $scoreData;
+    $_SESSION["add_comment"] = $commentData;
+    // Kiểm tra định dạng dữ liệu
+    if (empty($studentData)) {
+        $error['student'] = 'Hãy chọn sinh viên.';
+    }
+    if (empty($subjectData)) {
+        $error['subject'] = 'Hãy chọn môn học.';
+    }
+    if (empty($teacherData)) {
+        $error['teacher'] = 'Hãy chọn giáo viên.';
+    }
+    if ($scoreData == null) {
+        $error['score'] = 'Hãy chọn điểm.';
+    }
+    if ($commentData == null) {
+        $error['comment'] = 'Hãy nhập comment chi tiết';
+    }
+    if (!$error) {
+        header("Location: addScore.php?action=add_comfirm");
+        // exit();
+    }
+}
 
 // Hành động thêm
 if (isset($_GET['action'])) {
@@ -8,13 +45,27 @@ if (isset($_GET['action'])) {
     $action = '';
 }
 switch ($action) {
-    case 'delete': {
-            if (isset($_GET["id"])) {
-                $id = $_GET["id"];
-                $deleteS = deleteScores($id);
-                header("location: searchScore.php");
+    case 'add_comfirm': {
+            $student = getAllstudents();
+            $teacher = getAllteachers();
+            $subject = getAllsubjects();
+            if (isset($_POST['btnSubmitConfirm'])) {
+                $student_id = $_SESSION["add_student"];
+                $subject_id = $_SESSION["add_subject"];
+                $teacher_id = $_SESSION["add_teacher"];
+                $score = $_SESSION["add_score"];
+                $description = $_SESSION["add_comment"];
+                if (isset($student_id) && isset($subject_id) && isset($teacher_id) && isset($score) && isset($description)) {
+                    addScores($student_id, $teacher_id, $subject_id, $score, $description);
+                    header("Location: addScore.php?action=add_complete");
+                }
             }
-            // require_once('app/view/quanlydiem/deleteScoreView.php');
+            require_once('app/view/quanlydiem/AddScore/score_add_confirm.php');
+            break;
+        }
+    case 'add_complete': {
+            $student = getAllstudents();
+            require_once('app/view/quanlydiem/AddScore/score_add_complete.php');
             break;
         }
     default: {
