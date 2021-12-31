@@ -140,9 +140,9 @@ select:focus {
   cursor: pointer;
 }
 
-.error_score {
+.error_add_score {
   color: red;
-  margin-bottom: 12px;
+  margin-left: 192px;
 }
 
 .fieldset_score_add_complete {

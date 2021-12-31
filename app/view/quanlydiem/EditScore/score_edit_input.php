@@ -69,7 +69,7 @@ if (isset($_SESSION["comment"])) {
 
             <div class="teacher">
                 <label class="teacher_label">Giáo viên</label>
-                <select class="teacher_select" id="teacher" name="teacher" multiple>
+                <select class="teacher_select" id="teacher" name="teacher">
                     <?php
                     foreach ($teacher as $key => $value) {
                         if ($value['id'] == $dataScore[0][2]) {
