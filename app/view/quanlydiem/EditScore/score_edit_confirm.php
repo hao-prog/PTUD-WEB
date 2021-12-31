@@ -8,6 +8,9 @@
     <link href="./web/css/quanlydiem/editScore.css" rel="stylesheet">
     <title>Edit Score Confirm</title>
 </head>
+<?php
+$id_score = $_SESSION['ID_SCORE'];
+?>
 
 <body>
     <form method="POST" action="" class="form_edit_score">
@@ -51,7 +54,7 @@
             </div>
 
             <div class="submit">
-                <input type="button" name="btnSubmit" class="btnEditScore" value="Sửa lại" onClick="history.go(-1);" />
+                <input type="button" name="btnSubmit" class="btnEditScore" value="Sửa lại" onClick="window.location=`search_score.php?action=edit_input&id=${ <?php echo $id_score ?>}`;" />
                 <input type="submit" name="btnSubmitConfirm" class="btnConfirm" value="Xác Nhận" />
             </div>
 

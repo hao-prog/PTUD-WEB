@@ -51,7 +51,7 @@
             </div>
 
             <div class="submit">
-                <input type="button" name="btnSubmit" class="btnaddScore" value="Sửa lại" onClick="history.go(-1);" />
+                <input type="button" name="btnSubmit" class="btnaddScore" value="Sửa lại" onClick="window.location=`add_score.php`;" />
                 <input type="submit" name="btnSubmitConfirm" class="btnConfirm" value="Xác Nhận" />
             </div>
 

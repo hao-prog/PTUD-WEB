@@ -22,7 +22,7 @@ unset($_SESSION["subject"]);
 unset($_SESSION["teacher"]);
 unset($_SESSION["score"]);
 unset($_SESSION["comment"]);
-
+unset($_SESSION['ID_SCORE']);
 ?>
 
 <body>
