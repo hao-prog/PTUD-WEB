@@ -50,9 +50,9 @@ function getScoresID($id)
 function addScores($student_id, $teacher_id, $subject_id, $score, $description)
 {
     global $db;
-    $sql = "INSERT INTO scores VALUES ('', '$student_id', '$teacher_id', '$subject_id', '$score', '$description','','" . date("Y-m-d H:i:s") . "')";
+    $sql = "INSERT INTO scores(student_id, teacher_id, subject_id, score, description) VALUES ('$student_id', '$teacher_id', '$subject_id', '$score', '$description')";
     $add_score = $db->conn->prepare($sql);
-    $add_score->execute([$student_id, $teacher_id, $subject_id, $score, $description]);
+    $add_score->execute();
 
     return $add_score;
 }
@@ -62,7 +62,7 @@ function deleteScores($id)
     global $db;
     $sql = "DELETE FROM scores WHERE id=$id";
     $delete_score = $db->conn->prepare($sql);
-    $delete_score->execute([$id]);
+    $delete_score->execute();
     $scores2 = $delete_score->fetchAll();
 
     return $scores2;
@@ -72,7 +72,7 @@ function updateScores($id, $student, $teacher, $subject, $score, $comment)
 {
     global $db;
     $sql_update = "UPDATE scores SET student_id='$student', teacher_id='$teacher', subject_id='$subject', score='$score', description='$comment', updated='" . date("Y-m-d H:i:s") . "' WHERE id='$id'";
-    $update_score = $db->conn->prepare($sql_update)->execute([$student, $teacher, $subject, $score, $comment, $id]);
+    $update_score = $db->conn->prepare($sql_update)->execute();
     // $scores2 = $update_score->fetchAll();
 
     return $update_score;
