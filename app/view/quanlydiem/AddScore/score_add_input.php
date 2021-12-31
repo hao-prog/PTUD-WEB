@@ -44,7 +44,7 @@ $comment_error = $error['comment'] ?? '';
 <body>
     <form method="POST" action="" class="form_add_score">
         <fieldset class="form_add_score_fieldset">
-            <div class='error_score'>
+            <div class='error_add_score'>
                 <?php echo $student_error; ?>
             </div>
 
@@ -63,7 +63,7 @@ $comment_error = $error['comment'] ?? '';
                 </select>
 
             </div>
-            <div class='error_score'>
+            <div class='error_add_score'>
                 <?php echo $subject_error; ?>
             </div>
 
@@ -82,7 +82,7 @@ $comment_error = $error['comment'] ?? '';
                 </select>
 
             </div>
-            <div class='error_score'>
+            <div class='error_add_score'>
                 <?php echo $teacher_error; ?>
             </div>
             <div class="teacher">
@@ -100,7 +100,7 @@ $comment_error = $error['comment'] ?? '';
                 </select>
 
             </div>
-            <div class='error_score'>
+            <div class='error_add_score'>
                 <?php echo $score_error; ?>
             </div>
             <div class="score">
@@ -121,7 +121,7 @@ $comment_error = $error['comment'] ?? '';
                     ?>
                 </select>
             </div>
-            <div class='error_score'>
+            <div class='error_add_score'>
                 <?php echo $comment_error; ?>
             </div>
             <div class="comment">
