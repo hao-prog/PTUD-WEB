@@ -58,18 +58,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (!isset($_SESSION['had_avatar_tmp'])) {
-        if (
-            isset($_SESSION["teacher_avatar"]) &&
-            getimagesize($_FILES["teacher_avatar"]["tmp_name"]) == false
-        ) {
-            $_SESSION["teacher_avatar_error"] = "Avatar phải là file ảnh.";
-        }
-
-        if (isset($_SESSION["teacher_avatar"])) {
-            $target_dir = "../../../web/avatar/teacher_tmp/";
-            $target_file = $target_dir . basename($_FILES["teacher_avatar"]["name"]);
-            move_uploaded_file($_FILES["teacher_avatar"]["tmp_name"], $target_file);
-            $_SESSION['had_avatar_tmp'] = true;
+        if (isset($_SESSION["teacher_avatar"]) ) {
+            if (!$_FILES["teacher_avatar"]["tmp_name"] || getimagesize($_FILES["teacher_avatar"]["tmp_name"]) == false) {
+                $_SESSION["teacher_avatar_error"] = "Avatar phải là file ảnh.";
+                unset($_SESSION["teacher_avatar"]);
+            } else {
+                $target_dir = "../../../web/avatar/teacher_tmp/";
+                $target_file = $target_dir . basename($_FILES["teacher_avatar"]["name"]);
+                move_uploaded_file($_FILES["teacher_avatar"]["tmp_name"], $target_file);
+                $_SESSION['had_avatar_tmp'] = true;
+            }
         }
     }
 
