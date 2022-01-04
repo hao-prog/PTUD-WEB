@@ -5,8 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="web/css/home.css?v=<?php echo time(); ?>">
         <?php   
             header('Content-Type: text/html; charset=utf-8');
-            require_once 'app/controller/login_valid.php';
-            include 'expire.php';
+            include 'app/controller/common.php';
             expire("");
         ?>
     </head>
@@ -14,7 +13,7 @@
     <body>
         <?php 
         $departments = array("Phòng học", "Giáo viên", "Môn học", "Sinh viên", "Điểm"); 
-        $links = array();
+        $links = array("app/view/demo.php", "link2", "link3", "link4", "", "", "", "", "", "");
         ?>
 
         <div class="container">
@@ -26,12 +25,13 @@
                 <div class="department">
                     <p><?php echo $departments[$i]; ?></p>
 
-                    <a href="">Tìm kiếm</a>
+                    <?php 
+                    echo"<a href=".$links[2 * $i].">Tìm kiếm</a>";
 
-                    <?php if($departments[$i] == "Điểm") {  
-                        echo"<a href=\"\">Thêm điểm</a>";
+                    if($departments[$i] == "Điểm") {  
+                        echo"<a href=".$links[2 * $i + 1].">Thêm điểm</a>";
                     } else { 
-                        echo"<a href=\"\">Thêm mới</a>";
+                        echo"<a href=".$links[2 * $i + 1].">Thêm mới</a>";
                     } ?>
 
                 </div>
