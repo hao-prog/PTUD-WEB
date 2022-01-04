@@ -1,13 +1,3 @@
-<!-- <script>
-	function getTime() {
-		var today = new Date(); 
-		var date = today.getFullYear() + '-' + (today.getMonth()+1) + '-' + today.getDate(); 
-		var time = today.getHours() + ":" + today.getMinutes(); 
-		var dateTime = date + ' ' + time;
-		return dateTime; 
-	}
-</script> -->
-
 <?php
 // require_once '../common/connectionPDO.php';
 // include '../model/admin.php';
@@ -49,11 +39,9 @@ if(isset($_POST["submit"])) {
 		if(count($admin_db) == 0) { 
 			echo"<script>alert('login id và password không đúng');</script>";
 		} else {
-			$a = "<script>document.writeln(getTime());</script>";
 			$_SESSION["loggedAdmin"] = 1;
 			$_SESSION["username"] = $username;
 			$_SESSION["dateTime"] = date('Y-m-d H:i', time());
-			// "<script>document.writeln(getTime());</script>";
 			header("location: home.php");
 			exit();
 		}

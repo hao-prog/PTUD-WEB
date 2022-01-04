@@ -4,7 +4,6 @@
         <title>Login</title>
         <link rel="stylesheet" type="text/css" 
             href="web/css/login.css?v=<?php echo time(); ?>">
-        <!-- <script>const region = Intl.DateTimeFormat().resolvedOptions().timeZone; </script> -->
         <?php   
             header('Content-Type: text/html; charset=utf-8');
             date_default_timezone_set("Asia/Ho_Chi_Minh");
