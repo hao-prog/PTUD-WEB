@@ -1,5 +1,8 @@
 function getFileData(myFile) {
     var file = myFile.files[0];
-    var filename = file.name;
-    document.getElementById("fileNameTextBox").innerHTML = filename;
+    if (file) {
+        var filename = file.name;
+        document.getElementById('img').src = URL.createObjectURL(file);
+        document.getElementById("fileNameTextBox").innerHTML = filename;
+    }
 }

@@ -112,7 +112,7 @@ $teacher_avatar_error = $_SESSION["teacher_avatar_error"] ?? '';
                 Avatar
             </div>
 
-            <img class='avatar' src="../../../web/avatar/teacher/<?php echo $id; ?>/<?php echo $cur_teacher_avatar; ?>">
+            <img class='avatar' id='img' src="../../../web/avatar/teacher/<?php echo $id; ?>/<?php echo $cur_teacher_avatar; ?>">
         </div>
 
         <div class="error_message">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2021 at 04:14 PM
+-- Generation Time: Jan 04, 2022 at 08:08 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -103,6 +103,15 @@ CREATE TABLE `teachers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `teachers`
+--
+
+INSERT INTO `teachers` (`id`, `name`, `avatar`, `description`, `specialized`, `degree`, `updated`, `created`) VALUES
+(1, 'Thầy giáo Rose', 'thayHuanRose.jpg', 'Thầy dạy môn Giáo dục công dân', '003', '002', '2021-12-31 13:18:50', '2021-12-30 14:01:41'),
+(3, 'Thầy Huấn Rose', 'teacher_1.jpg', 'Đẹp trai, tài năng, tư duy đỉnh cao, tố chất lãnh đạo là những thứ mà Thầy Giáo Ba có', '001', '004', '2021-12-31 08:06:05', '2021-12-30 14:01:41'),
+(4, 'Cô giáo Minh Thu', 'teacher_2.jpg', 'Cô dạy môn Vật lý rất hay', '001', '004', '2021-12-30 14:06:57', '2021-12-30 14:01:41');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -169,7 +178,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
