@@ -1,22 +1,15 @@
+<meta http-equiv="refresh" content="1800">
 <?php
 session_start();
-include_once "app/common/define.php";
-if (!isset($_GET['url'])) {
-    echo 'abc';
-} else {
-    $url = $_GET['url'];
-    switch ($url) {
-        case 'teacher':
-            include_once 'teacherController.php';
-            break;
-        case 'student':
-            include_once 'studentController.php';
-            break;
-        case 'subjects':
-            include_once 'subjectsController.php';
-            break;
-        case 'quanlydiem':
-            include_once 'quanlydiemController.php';
-            break;
-    }
+function expire($pre) {
+	if(!isset($_SESSION["loggedAdmin"])){
+		header("location:" .$pre. "login.php");
+	}
+	setcookie("loggedAdm", 1, time() + (1800), '/');
+	if(!isset($_COOKIE['loggedAdm'])){
+		session_destroy();
+		setcookie("loggedAdm", "", time() - (3600));
+		header("location:" .$pre. "login.php");
+	}
 }
+?>
