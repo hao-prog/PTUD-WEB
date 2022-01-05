@@ -1,5 +1,5 @@
 <?php
-require_once '../../../app/common/connectionPDO.php';
+require_once __DIR__.'/../common/connectionPDO.php';
 $db = new Database();
 $db->__construct();
 
