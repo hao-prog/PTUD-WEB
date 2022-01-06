@@ -1,12 +1,9 @@
-<?php 
-    require '../controller/request_passwordController.php';
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/webfinal/web/css/style.css">
+    <link rel="stylesheet" href="/PTUD-WEB-De-tai-3-Quan-ly-diem-sinh-vien/web/css/request_pass.css">
     <title>Request Password</title>
 </head>
 <body>

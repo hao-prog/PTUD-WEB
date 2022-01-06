@@ -28,31 +28,9 @@
     background-color:#4682B4; 
     color: white;
 }
-.error {
-    color: red;
-    margin-left: 30px;
-}
-.reset {
-    border:2px solid #4682B4; 
-    padding: 10px; 
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.input2 {
-    height: 25px;
-    width: 200px;   
-    border: 1.5px solid #4682B4; 
-}
-.button2 {
-    height: 30px; 
-    width: 80px; 
-    border-radius: 8px; 
-    background-color:#4682B4; 
-    color: white;
-}
+
+
 
 
 
