@@ -1,0 +1,72 @@
+.content {
+    width: 80%;
+    margin: 30px auto;
+    padding: 40px 80px;
+    border: 2px solid #5280A9;
+}
+
+.search {
+    width: 80%;
+    padding: 10px 0px;
+    margin: 20px auto;
+    display: flex;
+}
+
+label{
+    flex: 1;
+    border: 1px solid #5280A9;
+    background-color: #5B9BD5;
+    text-align: center;
+    padding: 8px 18px;
+    margin-right: 20px;
+    margin-bottom: 0px!important;
+    color: white;
+}
+input{
+    flex: 5;
+    border: 1px solid #5280A9;
+    background-color: #FFFFFF!important;
+    padding: 10px;
+}
+.btn-search{
+    text-align: center;
+}
+#search-button {
+    padding: 10px 50px;
+    border: 1px solid #5280A9;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #5B9BD5;
+    color: white;
+}
+.count{
+    margin: 20px 0px;
+}
+table th {
+    background-color: #BDD6EE;
+    text-align: center;
+    padding: 10px 15px!important;
+}
+th, td {
+    vertical-align: middle!important;
+    padding: 6px 15px!important;
+}
+tr td:first-child{
+    text-align: center;
+}
+tr td:last-child{
+    text-align: center;
+}
+tr td button{
+    padding: 8px 15px!important;
+}
+#tensinhvien{
+    color: #5280A9;
+}
+.modal-header h3{
+    text-align:center;
+    color:red;
+}
+.modal-body h4{
+    text-align:center
+}
