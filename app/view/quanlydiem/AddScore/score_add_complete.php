@@ -26,7 +26,7 @@ unset($_SESSION['add_comment']);
 <body>
     <fieldset class="fieldset_score_add_complete">
         <p>Bạn đã nhập điểm thành công cho sinh viên <b><?php echo $name_student; ?></b> thành công.</p>
-        <a href="add_score.php">Trở về trang chủ</a>
+        <a href="home.php">Trở về trang chủ</a>
 
     </fieldset>
 </body>
