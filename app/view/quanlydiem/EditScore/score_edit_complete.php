@@ -28,7 +28,7 @@ unset($_SESSION['ID_SCORE']);
 <body>
     <fieldset class="fieldset_score_edit_complete">
         <p>Bạn đã sửa điểm thành công cho sinh viên <b><?php echo $name_student ?></b> thành công.</p>
-        <a href="search_score.php">Trở về trang chủ</a>
+        <a href="home.php">Trở về trang chủ</a>
 
     </fieldset>
 </body>
