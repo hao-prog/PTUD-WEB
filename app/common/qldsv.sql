@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 07, 2022 at 05:26 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th1 07, 2022 lúc 11:10 AM
+-- Phiên bản máy phục vụ: 10.4.13-MariaDB
+-- Phiên bản PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `qldsv`
+-- Cơ sở dữ liệu: `qldsv`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Cấu trúc bảng cho bảng `admins`
 --
 
 CREATE TABLE `admins` (
@@ -32,24 +32,24 @@ CREATE TABLE `admins` (
   `login_id` varchar(20) NOT NULL,
   `password` varchar(64) NOT NULL,
   `actived_flag` int(1) NOT NULL DEFAULT 1,
-  `reset_password_token` varchar(100),
+  `reset_password_token` varchar(100) NOT NULL,
   `updated` datetime NOT NULL DEFAULT current_timestamp(),
   `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `admins`
+-- Đang đổ dữ liệu cho bảng `admins`
 --
 
-INSERT INTO `admins` (`id`, `login_id`, `password`, `actived_flag`, `updated`, `created`) VALUES
-(1, 'Nguyễn Văn A', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
-(2, 'Nguyễn Văn B', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
-(3, 'Trần Văn C', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '2021-12-19 00:37:39', '2021-12-19 00:37:39');
+INSERT INTO `admins` (`id`, `login_id`, `password`, `actived_flag`, `reset_password_token`, `updated`, `created`) VALUES
+(1, 'Nguyễn Văn A', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '', '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
+(2, 'Nguyễn Văn B', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '', '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
+(3, 'Trần Văn C', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '', '2021-12-19 00:37:39', '2021-12-19 00:37:39');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `scores`
+-- Cấu trúc bảng cho bảng `scores`
 --
 
 CREATE TABLE `scores` (
@@ -66,7 +66,7 @@ CREATE TABLE `scores` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students`
+-- Cấu trúc bảng cho bảng `students`
 --
 
 CREATE TABLE `students` (
@@ -81,7 +81,7 @@ CREATE TABLE `students` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `subjects`
+-- Cấu trúc bảng cho bảng `subjects`
 --
 
 CREATE TABLE `subjects` (
@@ -97,7 +97,7 @@ CREATE TABLE `subjects` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `teachers`
+-- Cấu trúc bảng cho bảng `teachers`
 --
 
 CREATE TABLE `teachers` (
@@ -112,7 +112,7 @@ CREATE TABLE `teachers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `teachers`
+-- Đang đổ dữ liệu cho bảng `teachers`
 --
 
 INSERT INTO `teachers` (`id`, `name`, `avatar`, `description`, `specialized`, `degree`, `updated`, `created`) VALUES
@@ -121,70 +121,70 @@ INSERT INTO `teachers` (`id`, `name`, `avatar`, `description`, `specialized`, `d
 (4, 'Cô Giáo Minh Thu', 'teacher_2.jpg', 'Cô dạy môn Vật lý rất hay', '002', '004', '2022-01-07 11:24:29', '2021-12-30 14:01:41');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `admins`
+-- Chỉ mục cho bảng `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `login_id` (`login_id`);
 
 --
--- Indexes for table `scores`
+-- Chỉ mục cho bảng `scores`
 --
 ALTER TABLE `scores`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `students`
+-- Chỉ mục cho bảng `students`
 --
 ALTER TABLE `students`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `subjects`
+-- Chỉ mục cho bảng `subjects`
 --
 ALTER TABLE `subjects`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `teachers`
+-- Chỉ mục cho bảng `teachers`
 --
 ALTER TABLE `teachers`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT cho bảng `admins`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `scores`
+-- AUTO_INCREMENT cho bảng `scores`
 --
 ALTER TABLE `scores`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `students`
+-- AUTO_INCREMENT cho bảng `students`
 --
 ALTER TABLE `students`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `subjects`
+-- AUTO_INCREMENT cho bảng `subjects`
 --
 ALTER TABLE `subjects`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `teachers`
+-- AUTO_INCREMENT cho bảng `teachers`
 --
 ALTER TABLE `teachers`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
