@@ -1,5 +1,7 @@
 <?php 
-     require_once 'app/controller/reset_passwordController.php';
+     require_once '../common/connectionPDO.php';
+     include '../model/admin.php';
+     include '../controller/reset_passwordController.php';
 ?> 
 <!DOCTYPE html>
 <html>
