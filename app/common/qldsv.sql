@@ -32,7 +32,7 @@ CREATE TABLE `admins` (
   `login_id` varchar(20) NOT NULL,
   `password` varchar(64) NOT NULL,
   `actived_flag` int(1) NOT NULL DEFAULT 1,
-  `reset_password_token` varchar(100) NOT NULL,
+  `reset_password_token` varchar(100),
   `updated` datetime NOT NULL DEFAULT current_timestamp(),
   `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -41,10 +41,10 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `login_id`, `password`, `actived_flag`, `reset_password_token`, `updated`, `created`) VALUES
-(1, 'Nguyễn Văn A', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '0.21809700 1639848896', '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
-(2, 'Nguyễn Văn B', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '0.13757200 1639848990', '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
-(3, 'Trần Văn C', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '0.10683000 1639849041', '2021-12-19 00:37:39', '2021-12-19 00:37:39');
+INSERT INTO `admins` (`id`, `login_id`, `password`, `actived_flag`, `updated`, `created`) VALUES
+(1, 'Nguyễn Văn A', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
+(2, 'Nguyễn Văn B', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
+(3, 'Trần Văn C', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '2021-12-19 00:37:39', '2021-12-19 00:37:39');
 
 -- --------------------------------------------------------
 
