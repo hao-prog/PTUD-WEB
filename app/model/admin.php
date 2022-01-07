@@ -1,5 +1,5 @@
 <?php
-    require 'app/common/connectionPDO.php';
+    //require 'app/common/connectionPDO.php';
     $db = new Database();
     $db->__construct();
 
