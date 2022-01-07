@@ -63,7 +63,7 @@ switch ($action) {
             if (empty($_SESSION["add_student"]) || empty($_SESSION["add_subject"]) || empty($_SESSION["add_teacher"]) || empty($_SESSION["add_score"]) || empty($_SESSION["add_comment"])) {
                 header('location: add_score.php');
             }
-            require_once('app/view/quanlydiem/AddScore/score_add_confirm.php');
+            require_once('app/view/score/AddScore/score_add_confirm.php');
 
             break;
         }
@@ -72,14 +72,14 @@ switch ($action) {
             if (empty($_SESSION["add_student"]) || empty($_SESSION["add_subject"]) || empty($_SESSION["add_teacher"]) || empty($_SESSION["add_score"]) || empty($_SESSION["add_comment"])) {
                 header('location: add_score.php');
             }
-            require_once('app/view/quanlydiem/AddScore/score_add_complete.php');
+            require_once('app/view/score/AddScore/score_add_complete.php');
             break;
         }
     default: {
             $student = getAllstudents();
             $teacher = getAllteachers();
             $subject = getAllsubjects();
-            require_once('app/view/quanlydiem/AddScore/score_add_input.php');
+            require_once('app/view/score/AddScore/score_add_input.php');
             break;
         }
 }

@@ -14,7 +14,6 @@
             <input class="input" type="text" name="login_id">
             <input class="button" type="submit" name="submit" value="Gửi yêu cầu reset password">
         </form>
-        <div><a href="../controller/reset_passwordController.php">Đến trang reset password/test</a></div>
     </div>
 </body>
 </html>

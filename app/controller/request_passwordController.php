@@ -1,5 +1,4 @@
 <?php 
-    
     require "../../app/model/admin.php";
     $login_idErr = "";
     $login_id = "";
@@ -16,8 +15,8 @@
                 $login_idErr = "Hãy nhập login id tối thiểu 4 ký tự";
             }else {
                 if(selectloginId($login_id)->rowCount() == 1) {
-                    updateLoginId($login_id, $reset_password_token);
-                    // header("Location:../../login.php");  
+                    updateLoginId($login_id, $reset_password_token); 
+                    header("Location: ../controller/reset_passwordController.php"); 
                 }else{
                     $login_idErr = "login id không tồn tại trong hệ thống";
                 }
