@@ -1,5 +1,5 @@
 <?php
-    require 'app/common/connectionPDO.php';
+    require_once __DIR__.'/../common/connectionPDO.php';
     $db = new Database();
     $db->__construct();
 
@@ -25,7 +25,7 @@
     //get token not null 
     function selectReset() {
         global $db;
-        $sql = "SELECT * FROM `admins` WHERE `reset_password_token` IS NOT NULL";
+        $sql = "SELECT * FROM `admins` WHERE `reset_password_token` != ''";
         $query = $db->conn->prepare($sql);
         $query->execute();
         $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -36,7 +36,7 @@
     function updateNewPassword($login_id, $password) {
         global $db;
         $password_new = md5($password);
-        $sql = "UPDATE `admins` SET `reset_password_token`= NULL, `password`= '$password_new' WHERE `login_id` = '$login_id'";
+        $sql = "UPDATE `admins` SET `reset_password_token`= '', `password`= '$password_new' WHERE `login_id` = '$login_id'";
         $query = $db->conn->prepare($sql);
         $query->execute();
         return $query;
