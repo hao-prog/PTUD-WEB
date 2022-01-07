@@ -10,7 +10,10 @@
 </head>
 <?php
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
 if (isset($_SESSION["student"])) {
     $dataScore[0][1] = $_SESSION["student"];
 }
@@ -26,10 +29,13 @@ if (isset($_SESSION["score"])) {
 if (isset($_SESSION["comment"])) {
     $dataScore[0][5] = $_SESSION["comment"];
 }
+<<<<<<< HEAD
 if (isset($_GET["id"])) {
     $_SESSION['ID_SCORE'] = $_GET["id"];
 }
 
+=======
+>>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
 ?>
 
 <body>

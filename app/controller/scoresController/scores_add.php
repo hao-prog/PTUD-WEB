@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 session_start();
 
+=======
+
+session_start();
+>>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
 $error = array();
 $studentData = $subjectData = $teacherData = $scoreData = $commentData = "";
 if (isset($_POST['submitaddScore'])) {
@@ -60,18 +65,25 @@ switch ($action) {
                     header("Location: add_score.php?action=add_complete");
                 }
             }
+<<<<<<< HEAD
             if (empty($_SESSION["add_student"]) || empty($_SESSION["add_subject"]) || empty($_SESSION["add_teacher"]) || empty($_SESSION["add_score"]) || empty($_SESSION["add_comment"])) {
                 header('location: add_score.php');
             }
             require_once('app/view/quanlydiem/AddScore/score_add_confirm.php');
 
+=======
+            require_once('app/view/quanlydiem/AddScore/score_add_confirm.php');
+>>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
             break;
         }
     case 'add_complete': {
             $student = getAllstudents();
+<<<<<<< HEAD
             if (empty($_SESSION["add_student"]) || empty($_SESSION["add_subject"]) || empty($_SESSION["add_teacher"]) || empty($_SESSION["add_score"]) || empty($_SESSION["add_comment"])) {
                 header('location: add_score.php');
             }
+=======
+>>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
             require_once('app/view/quanlydiem/AddScore/score_add_complete.php');
             break;
         }

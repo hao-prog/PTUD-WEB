@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
 // Tìm kiếm
 $sql_scores = [];
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -73,7 +76,10 @@ switch ($action) {
                     }
                 }
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
             require_once('app/view/quanlydiem/EditScore/score_edit_input.php');
             break;
         }
