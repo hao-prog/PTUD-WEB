@@ -51,10 +51,11 @@ unset($_SESSION['comment']);
             <th style="width:150px">Action</th>
         </tr>
         <?php
+        $count = 1;
         foreach ($sql_scores as $row) {
         ?>
             <tr>
-                <td><?php echo $row[0] ?></td>
+                <td><?php echo $count; $count++; ?></td>
                 <td><?php echo $row[1] ?></td>
                 <td><?php echo $row[2] ?></td>
                 <td><?php echo $row[3] ?></td>
