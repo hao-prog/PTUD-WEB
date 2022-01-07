@@ -5,8 +5,8 @@
 Login/logout:
 
 - Login/logout
-- màn hình home..(phân quyền)
-- reminder password/Cấp lại password
+- Màn hình home...(phân quyền)
+- Reminder password/Cấp lại password
 
 Giáo viên
 
