@@ -9,11 +9,8 @@
     <title>Edit Score Confirm</title>
 </head>
 <?php
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
 $id_score = $_SESSION['ID_SCORE'];
 ?>
 

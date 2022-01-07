@@ -10,11 +10,8 @@
 </head>
 
 <?php
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
 foreach ($student as $key => $value) {
     if ($value['id'] == ($_SESSION["add_student"])) {
         $name_student = $value['name'];

@@ -54,11 +54,7 @@ unset($_SESSION['comment']);
         foreach ($sql_scores as $row) {
         ?>
             <tr>
-<<<<<<< HEAD
                 <td><?php echo $row[0] ?></td>
-=======
-                <td><?php echo $_SESSION['ID_SCORE'] = $row[0] ?></td>
->>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
                 <td><?php echo $row[1] ?></td>
                 <td><?php echo $row[2] ?></td>
                 <td><?php echo $row[3] ?></td>

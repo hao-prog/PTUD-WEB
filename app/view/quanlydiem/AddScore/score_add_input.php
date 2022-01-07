@@ -10,16 +10,8 @@
 </head>
 
 <?php
-<<<<<<< HEAD
 
 
-=======
-// unset($_SESSION["add_student"]);
-// unset($_SESSION["add_subject"]);
-// unset($_SESSION["add_teacher"]);
-// unset($_SESSION["add_score"]);
-// unset($_SESSION["add_comment"]);
->>>>>>> 05c842e41de016a75c71368028c61e25ad41f279
 $name_student = $name_subject = $name_teacher  = $comment = '';
 $score = null;
 if (isset($_SESSION["add_student"])) {
