@@ -1,0 +1,87 @@
+* {
+  font-size: 18px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: blue;
+}
+
+fieldset {
+  width: 1100px;
+  border: 1.5px solid rgb(12, 12, 165);
+  margin: auto;
+  margin-top: 80px;
+}
+
+.box_search td {
+  padding-top: 15px;
+}
+
+.box_search {
+  margin: 0 auto;
+  width: 500px;
+}
+.input-search {
+  margin-left: 10px;
+  border: 1.5px solid rgba(39, 125, 238, 0.89);
+  background-color: #dbebf3;
+  border-radius: 2px;
+}
+
+.submit-lable {
+  font-family: "Times New Roman", Times, serif;
+  background-color: #5b9bd5;
+  margin-left: 80px;
+  color: white;
+  border-style: solid;
+  border-color: #4169e1;
+  border-radius: 6px;
+  padding: 5px 20px 5px 20px;
+}
+
+.submit-lable:hover {
+  background-color: #ed7d31;
+  cursor: pointer;
+}
+
+.table-search {
+  margin: 0 auto;
+  width: 950px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.table-search th {
+  border-right: 1px solid black;
+}
+.table-search td {
+  padding: 8px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.btn-delete {
+  font-family: "Times New Roman", Times, serif;
+  border-color: #dd1f11;
+  color: white;
+  border-style: solid;
+  border-radius: 4px;
+  background-color: rgb(238, 50, 43);
+}
+
+.btn-edit {
+  font-family: "Times New Roman", Times, serif;
+  border-color: #159c3e;
+  color: white;
+  border-style: solid;
+  border-radius: 4px;
+  background-color: rgb(45, 182, 80);
+}
+
+.btn:hover {
+  border-color: #4169e1;
+  cursor: pointer;
+}

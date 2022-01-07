@@ -15,8 +15,12 @@ if (!isset($_GET['url'])) {
         case 'subjects':
             include_once 'subjectsController.php';
             break;
+        case 'addStudent':
+            include_once 'studentsController/student_add.php';
+            break;
         case 'quanlydiem':
             include_once 'quanlydiemController.php';
             break;
     }
 }
+?>
