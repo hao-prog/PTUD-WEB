@@ -62,3 +62,16 @@ function deleteTeacher($id, $str, $spec)
 	$db->conn->exec($query);
 	header("Location: ../view/search_teacher.php?spec=" . $spec . "&str=" . $str);
 }
+function insertTeacher($name, $avatar, $description, $specialized, $degree) {
+    global $db;
+    $sql = "INSERT INTO teachers (name, avatar, description, specialized, degree)
+			VALUES ('$name', '$avatar', '$description', '$specialized', '$degree');";
+    $teacher = $db->conn->prepare($sql);
+    $teacher->execute();
+	
+	$sql = "SELECT LAST_INSERT_ID() as id;";
+	$teacher = $db->conn->prepare($sql);
+	$teacher->execute();
+	return $teacher->fetch();
+}
+
