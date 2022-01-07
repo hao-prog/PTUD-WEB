@@ -35,11 +35,13 @@
             </div>
             <div class="wrap-item">
                 <label for="">Từ khóa</label>
-                <input type="text" class="input-search" name="search" value="">
+                <input type="text" class="input-search" name="search" value="<?php echo $keyword ?>">
             </div>
             <input type="submit" class="btn-submit" value="Tìm kiếm">
         </form>
-        <p>Số môn học tìm thấy: <label></label></p>
+
+        <label>Số môn học tìm thấy: <?php echo isset($_GET['search']) ? count($subjects) : 0; ?></label>
+
         <table>
             <colgroup>
                 <col width="5%">
@@ -59,23 +61,22 @@
             </thead>
             <tbody>
                 <?php
-
+                require_once __DIR__ . '/../model/subjects.php';
                 if (isset($_GET['search'])) {
-
-                    global $subjects;
-                    foreach ($subjects as $row) { ?>
+                    foreach ($subjects as $subject) { ?>
                         <tr>
                             <td class="counterCell"></td>
-                            <td> <label><?php echo $row['name'] ?></label> </td>
-                            <td> <label><?php echo $row['school_year'] ?></label> </td>
-                            <td class="description"> <label><?php echo $row['description'] ?></label> </td>
+                            <td> <label><?php echo $subject['name'] ?></label> </td>
+                            <td> <label><?php echo $subject['school_year'] ?></label> </td>
+                            <td class="description"> <label><?php echo $subject['description'] ?></label> </td>
                             <td>
-                                <button class="btn btn-delete" onclick="deleteSubject('<?php echo $row['name'] ?>', '<?php echo $row['id'] ?>')">Xóa</button>
+                                <button class="btn btn-delete" onclick="deleteSubject('<?php echo $subject['name'] ?>', '<?php echo $subject['id'] ?>')">Xóa</button>
                                 <button class="btn btn-edit">Sửa</button>
                             </td>
                         </tr>
                 <?php }
-                } ?>
+                }
+                ?>
             </tbody>
         </table>
 
