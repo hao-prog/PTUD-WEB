@@ -6,5 +6,5 @@ include 'access.php';
 expire("");
 
 require_once 'app/common/connectionPDO.php';
-include 'app/model/quanlydiem.php';
+include 'app/model/score.php';
 include 'app/controller/scoresController/scores_add.php';

@@ -3,7 +3,7 @@
 <head>
     <title>Tìm kiếm điểm</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="./web/css/quanlydiem/SearchScores.css" rel="stylesheet">
+    <link href="./web/css/score/SearchScores.css" rel="stylesheet">
     <script src="web/js/score_search_scripts.js"></script>
 
 </head>

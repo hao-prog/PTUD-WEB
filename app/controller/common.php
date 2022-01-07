@@ -18,8 +18,8 @@ if (!isset($_GET['url'])) {
         case 'addStudent':
             include_once 'studentsController/student_add.php';
             break;
-        case 'quanlydiem':
-            include_once 'quanlydiemController.php';
+        case 'score':
+            include_once 'scoreController.php';
             break;
     }
 }

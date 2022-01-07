@@ -26,7 +26,7 @@ switch ($action) {
                 $deleteS = deleteScores($id);
                 header("location: search_score.php");
             }
-            // require_once('app/view/quanlydiem/deleteScoreView.php');
+            // require_once('app/view/score/deleteScoreView.php');
             break;
         }
     case 'edit_input': {
@@ -72,7 +72,7 @@ switch ($action) {
                     }
                 }
             }
-            require_once('app/view/quanlydiem/EditScore/score_edit_input.php');
+            require_once('app/view/score/EditScore/score_edit_input.php');
             break;
         }
     case 'edit_comfirm': {
@@ -96,7 +96,7 @@ switch ($action) {
                         header("Location: search_score.php?action=edit_complete&id={$id}");
                     }
                 }
-                require_once('app/view/quanlydiem/EditScore/score_edit_confirm.php');
+                require_once('app/view/score/EditScore/score_edit_confirm.php');
                 break;
             }
         }
@@ -105,12 +105,12 @@ switch ($action) {
                 session_start();
                 $id = $_GET["id"];
                 $student = getAllstudents();
-                require_once('app/view/quanlydiem/EditScore/score_edit_complete.php');
+                require_once('app/view/score/EditScore/score_edit_complete.php');
                 break;
             }
         }
     default: {
-            require_once('app/view/quanlydiem/score_search.php');
+            require_once('app/view/score/score_search.php');
             break;
         }
 }
