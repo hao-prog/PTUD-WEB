@@ -1,4 +1,5 @@
 <?php
+
 // Tìm kiếm
 $sql_scores = [];
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -72,6 +73,7 @@ switch ($action) {
                     }
                 }
             }
+
             require_once('app/view/quanlydiem/EditScore/score_edit_input.php');
             break;
         }

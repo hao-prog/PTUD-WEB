@@ -10,11 +10,8 @@
 </head>
 
 <?php
-// unset($_SESSION["add_student"]);
-// unset($_SESSION["add_subject"]);
-// unset($_SESSION["add_teacher"]);
-// unset($_SESSION["add_score"]);
-// unset($_SESSION["add_comment"]);
+
+
 $name_student = $name_subject = $name_teacher  = $comment = '';
 $score = null;
 if (isset($_SESSION["add_student"])) {

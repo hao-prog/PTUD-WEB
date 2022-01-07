@@ -11,6 +11,7 @@
 
 <?php
 
+
 foreach ($student as $key => $value) {
     if ($value['id'] == ($_SESSION["student"])) {
         $name_student = $value['name'];

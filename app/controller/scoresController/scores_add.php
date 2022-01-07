@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+
 $error = array();
 $studentData = $subjectData = $teacherData = $scoreData = $commentData = "";
 if (isset($_POST['submitaddScore'])) {
@@ -60,11 +60,18 @@ switch ($action) {
                     header("Location: add_score.php?action=add_complete");
                 }
             }
+            if (empty($_SESSION["add_student"]) || empty($_SESSION["add_subject"]) || empty($_SESSION["add_teacher"]) || empty($_SESSION["add_score"]) || empty($_SESSION["add_comment"])) {
+                header('location: add_score.php');
+            }
             require_once('app/view/quanlydiem/AddScore/score_add_confirm.php');
+
             break;
         }
     case 'add_complete': {
             $student = getAllstudents();
+            if (empty($_SESSION["add_student"]) || empty($_SESSION["add_subject"]) || empty($_SESSION["add_teacher"]) || empty($_SESSION["add_score"]) || empty($_SESSION["add_comment"])) {
+                header('location: add_score.php');
+            }
             require_once('app/view/quanlydiem/AddScore/score_add_complete.php');
             break;
         }

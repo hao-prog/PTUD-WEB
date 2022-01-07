@@ -8,7 +8,9 @@
     <link href="./web/css/quanlydiem/addScore.css" rel="stylesheet">
     <title>Add Score Confirm</title>
 </head>
+<?php 
 
+?>
 <body>
     <form method="POST" action="" class="form_add_score">
         <fieldset class="form_add_score_fieldset">

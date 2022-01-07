@@ -10,6 +10,7 @@
 </head>
 <?php
 
+
 if (isset($_SESSION["student"])) {
     $dataScore[0][1] = $_SESSION["student"];
 }
@@ -25,6 +26,10 @@ if (isset($_SESSION["score"])) {
 if (isset($_SESSION["comment"])) {
     $dataScore[0][5] = $_SESSION["comment"];
 }
+if (isset($_GET["id"])) {
+    $_SESSION['ID_SCORE'] = $_GET["id"];
+}
+
 ?>
 
 <body>
