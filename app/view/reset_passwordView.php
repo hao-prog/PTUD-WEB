@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
-    <link rel="stylesheet" href="/PTUD-WEB-De-tai-3-Quan-ly-diem-sinh-vien/web/css/reset_pass.css">
+    <link rel="stylesheet" href="../../web/css/reset_pass.css">
 
 </head>
 <body>
