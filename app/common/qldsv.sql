@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2022 at 08:08 AM
+-- Generation Time: Jan 07, 2022 at 05:26 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -28,14 +28,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admins` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `login_id` varchar(20) NOT NULL,
   `password` varchar(64) NOT NULL,
   `actived_flag` int(1) NOT NULL DEFAULT 1,
-  `reset_password_token` varchar(100) DEFAULT NULL,
-  `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `reset_password_token` varchar(100) NOT NULL,
+  `updated` datetime NOT NULL DEFAULT current_timestamp(),
   `created` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `login_id`, `password`, `actived_flag`, `reset_password_token`, `updated`, `created`) VALUES
+(1, 'Nguyễn Văn A', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '0.21809700 1639848896', '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
+(2, 'Nguyễn Văn B', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '0.13757200 1639848990', '2021-12-19 00:37:39', '2021-12-19 00:37:39'),
+(3, 'Trần Văn C', '54e04d7cafe5b9929847f3f5e3c7102f', 1, '0.10683000 1639849041', '2021-12-19 00:37:39', '2021-12-19 00:37:39');
 
 -- --------------------------------------------------------
 
@@ -109,7 +118,7 @@ CREATE TABLE `teachers` (
 INSERT INTO `teachers` (`id`, `name`, `avatar`, `description`, `specialized`, `degree`, `updated`, `created`) VALUES
 (1, 'Thầy giáo Rose', 'thayHuanRose.jpg', 'Thầy dạy môn Giáo dục công dân', '003', '002', '2021-12-31 13:18:50', '2021-12-30 14:01:41'),
 (3, 'Thầy Huấn Rose', 'teacher_1.jpg', 'Đẹp trai, tài năng, tư duy đỉnh cao, tố chất lãnh đạo là những thứ mà Thầy Giáo Ba có', '001', '004', '2021-12-31 08:06:05', '2021-12-30 14:01:41'),
-(4, 'Cô giáo Minh Thu', 'teacher_2.jpg', 'Cô dạy môn Vật lý rất hay', '001', '004', '2021-12-30 14:06:57', '2021-12-30 14:01:41');
+(4, 'Cô Giáo Minh Thu', 'teacher_2.jpg', 'Cô dạy môn Vật lý rất hay', '002', '004', '2022-01-07 11:24:29', '2021-12-30 14:01:41');
 
 --
 -- Indexes for dumped tables
@@ -154,7 +163,7 @@ ALTER TABLE `teachers`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `scores`
@@ -178,7 +187,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
