@@ -34,7 +34,6 @@
             </tr>
             </form> 
         </table>
-    <div><a href="../../login.php">Quay lại trang đăng nhập</a></div>
     </div>
 </body>
 </html>
