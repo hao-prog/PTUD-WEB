@@ -1,6 +1,10 @@
 <?php
-require_once '../../../app/model/teacher.php';
 session_start();
+require_once '../../../access.php';
+expire('../../../');
+
+require_once '../../../app/model/teacher.php';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_SESSION['teacher_id'];

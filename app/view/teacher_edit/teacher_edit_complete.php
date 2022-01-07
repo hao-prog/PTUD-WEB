@@ -1,3 +1,10 @@
+<?php
+session_start();
+require_once '../../../access.php';
+expire('../../../');
+?>
+
+
 <html>
 
 <head>
@@ -6,7 +13,7 @@
 
 <div class='complete'>
     <div class="complete_noti"> Bạn đã cập nhật thông tin giáo viên thành công </div>
-    <a class="complete_noti home_url" href="../../../login.php"> <i> Trở về trang chủ </i> </a>
+    <a class="complete_noti home_url" href="../../../home.php"> <i> Trở về trang chủ </i> </a>
 </div>
 
 </html>

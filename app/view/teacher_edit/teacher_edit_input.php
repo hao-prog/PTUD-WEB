@@ -1,7 +1,13 @@
 <?php
+error_reporting(0);
+session_start();
+require_once '../../../access.php';
+expire('../../../');
+
 require_once '../../../app/common/define.php';
 require_once '../../../app/model/teacher.php';
-session_start();
+
+
 
 $id = $_GET['id'];
 $_SESSION["teacher_id"] = $id;

@@ -1,5 +1,7 @@
 <?php
 session_start();
+require_once '../../../access.php';
+expire('../../../');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_SESSION['teacher_id'];
