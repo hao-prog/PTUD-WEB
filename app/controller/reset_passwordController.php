@@ -1,6 +1,6 @@
 <?php
-// require "app/common/connectionPDO.php";
-require "app/model/admin.php";
+
+require "../../app/model/admin.php";
 
 //get login_id 
 if (isset($_POST['login_id'])) {
@@ -25,8 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         updateNewPassword($login_id, $pass);
     }
 }
-    // header("Location: /app/view/reset_passwordView.php"); 
-    require_once('app/view/reset_passwordView.php');
+     
+    require_once '../../app/view/reset_passwordView.php';
 
 ?>
     
