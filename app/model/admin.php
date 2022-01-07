@@ -42,3 +42,13 @@
         return $query;
 
     }
+
+    function checkExist($username, $password) {
+        global $db;
+        $stmt = $db->conn->prepare("SELECT * FROM admins
+                WHERE login_id = '$username' AND password = '$password' ");
+        $stmt->execute();
+        $admin_db = $stmt->fetchAll();
+        return $admin_db;
+    }
+?>

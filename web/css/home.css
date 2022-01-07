@@ -1,0 +1,39 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    padding: 20px;
+}
+
+#name-login {
+    display: inline;
+}
+
+#logout {
+    float: right;
+    margin-right: 37%;
+    text-decoration-line: none;
+}
+
+.department {
+    width: 20%;
+    float: left;
+}
+
+.department p {
+    margin-bottom: 2px;
+}
+
+.department a {
+    display: block;
+    margin-left: 10%;
+    padding: 2px;
+    width: 75px;
+    color: blue;
+}
+
+.department a:hover, #logout:hover {
+    font-weight: 600;
+}
