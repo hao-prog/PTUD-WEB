@@ -1,6 +1,5 @@
 <?php 
-    
-    // require "app/model/admin.php";
+    require "../../app/model/admin.php";
     $login_idErr = "";
     $login_id = "";
     $reset_password_token = microtime(true);
@@ -26,7 +25,8 @@
         }
     }
 
-    // require_once('app/view/request_passwordView.php');
+
+    require_once '../../app/view/request_passwordView.php';
 
 
                     

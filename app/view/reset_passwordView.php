@@ -1,7 +1,5 @@
 <?php 
-    // require_once '../common/connectionPDO.php';
-     // include '../model/admin.php';
-     require_once 'app/controller/reset_passwordController.php';
+     require_once '../../app/controller/reset_passwordController.php';
 ?> 
 <!DOCTYPE html>
 <html>
@@ -15,7 +13,7 @@
     <div class="reset">
         <span class="error"><?php global $password_Err; echo $password_Err;?></span><br><br>
         <table>
-            <form name="form" method="POST" action="index.php" id="form">
+            <form name="form" method="POST" action="" id="form">
             <tr>
                 <th>NO</th>
                 <th>Tên người dùng</th>
@@ -36,7 +34,7 @@
             </tr>
             </form> 
         </table>
-    
+    <div><a href="../../login.php">Quay lại trang đăng nhập</a></div>
     </div>
 </body>
 </html>
