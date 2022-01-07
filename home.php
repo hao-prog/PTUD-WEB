@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <title>Homepage</title>
-		<link rel="stylesheet" type="text/css" href="web/css/home.css?v=<?php echo time(); ?>">
-        <?php   
-            header('Content-Type: text/html; charset=utf-8');
-            session_start();
-            include 'access.php';
-            expire("");
-        ?>
-    </head>
 
-    <body>
-        <?php 
-        $departments = array("Phòng học", "Giáo viên", "Môn học", "Sinh viên", "Điểm"); 
-        $links = array("app/view/demo.php", "link2", "link3", "link4", "", "", "", "", "", "");
-        ?>
+<head>
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="web/css/home.css?v=<?php echo time(); ?>">
+    <?php
+    header('Content-Type: text/html; charset=utf-8');
+    session_start();
+    include 'access.php';
+    expire("");
+    ?>
+</head>
 
-        <div class="container">
-            <p id="name-login">Tên login: <?php echo $_SESSION["username"]; ?></p>
-            <a id="logout" href="logout.php">Logout</a>
-            <p>Thời gian login: <?php echo $_SESSION["dateTime"]; ?></p>
+<body>
+    <?php
+    $departments = array("Phòng học", "Giáo viên", "Môn học", "Sinh viên", "Điểm");
+    $links = array("link tim phong hoc", "link them phong hoc", 
+        "link tim giao vien", "app/view/teacher_edit/teacher_edit_input.php", 
+        "link tim mon hoc", "link them mon hoc", 
+        "link tim sinh vien", "link them sinh vien", 
+        "search_score.php", "add_score.php");
+    ?>
 
-            <?php for($i = 0; $i < count($departments); $i++) { ?>
-                <div class="department">
-                    <p><?php echo $departments[$i]; ?></p>
+    <div class="container">
+        <p id="name-login">Tên login: <?php echo $_SESSION["username"]; ?></p>
+        <a id="logout" href="logout.php">Logout</a>
+        <p>Thời gian login: <?php echo $_SESSION["dateTime"]; ?></p>
 
-                    <?php 
-                    echo"<a href=".$links[2 * $i].">Tìm kiếm</a>";
+        <?php for ($i = 0; $i < count($departments); $i++) { ?>
+            <div class="department">
+                <p><?php echo $departments[$i]; ?></p>
 
-                    if($departments[$i] == "Điểm") {  
-                        echo"<a href=".$links[2 * $i + 1].">Thêm điểm</a>";
-                    } else { 
-                        echo"<a href=".$links[2 * $i + 1].">Thêm mới</a>";
-                    } ?>
+                <?php
+                echo "<a href=" . $links[2 * $i] . ">Tìm kiếm</a>";
 
-                </div>
-            <?php } ?>
-        </div>
-    </body>
-    
+                if ($departments[$i] == "Điểm") {
+                    echo "<a href=" . $links[2 * $i + 1] . ">Thêm điểm</a>";
+                } else {
+                    echo "<a href=" . $links[2 * $i + 1] . ">Thêm mới</a>";
+                } ?>
+
+            </div>
+        <?php } ?>
+    </div>
+</body>
+
 </html>
