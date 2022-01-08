@@ -2,6 +2,8 @@
 require_once '../../../app/common/define.php';
 require_once '../../../app/model/teacher.php';
 session_start();
+include '../../../access.php';
+expire("../../../");
 
 $teacher_name_error = $_SESSION["teacher_name_error"] ?? '';
 $teacher_specialized_error = $_SESSION["teacher_specialized_error"] ?? '';
