@@ -99,7 +99,7 @@ switch ($action) {
                         header("Location: search_score.php?action=edit_complete&id={$id}");
                     }
                 }
-                if (empty($_SESSION["student"]) || empty($_SESSION["subject"]) || empty($_SESSION["teacher"]) || empty($_SESSION["score"]) || empty($_SESSION["comment"]) || empty($_GET["id"])) {
+                if (empty($_GET["id"])) {
                     header('location: search_score.php');
                 }
                 require_once('app/view/score/EditScore/score_edit_confirm.php');
@@ -111,7 +111,7 @@ switch ($action) {
                 session_start();
                 $id = $_GET["id"];
                 $student = getAllstudents();
-                if (empty($_SESSION["student"]) || empty($_SESSION["subject"]) || empty($_SESSION["teacher"]) || empty($_SESSION["score"]) || empty($_SESSION["comment"]) || empty($_GET["id"])) {
+                if (empty($_GET["id"])) {
                     header('location: search_score.php');
                 }
                 require_once('app/view/score/EditScore/score_edit_complete.php');
