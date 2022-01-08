@@ -16,11 +16,18 @@
     <?php
     $departments = array("Phòng học", "Giáo viên", "Môn học", "Sinh viên", "Điểm");
 
+
     $links = array("app/view/demo.php", "link2", "app/view/search_teacher.php", "app/view/teacher_new/teacher_new_input.php", "", "", "", "", "search_score.php", "add_score.php");
     $links = array("link tim phong hoc", "link them phong hoc", 
         "app/view/search_teacher.php", "app/view/teacher_edit/teacher_edit_input.php", 
         "subject.php", "link them mon hoc", 
         "app/view/students/searchStudent.php", "add_student.php", 
+
+$links = array("#link tim phong hoc", "#link them phong hoc", 
+        "app/view/search_teacher.php", "#link them giao vien", 
+        "subject.php", "#link them mon hoc", 
+        "search_student.php", "add_student.php", 
+
         "search_score.php", "add_score.php");
     ?>
 

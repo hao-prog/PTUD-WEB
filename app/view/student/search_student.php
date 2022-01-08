@@ -3,11 +3,16 @@
 <head>
     <title>Tìm kiếm sinh viên</title>
     <meta charshet="utf-8" />
-    <link rel="stylesheet" href="web/css/student.css" />
+    <link rel="stylesheet" href="./web/css/student/search_student.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <?php
+    session_start();
+    include '../../../access.php';
+    expire("../../../");
+    ?>
 </head>
 <body>
 <div class="content">
@@ -75,7 +80,7 @@
         </div>
     </div>
 </div>
-<script src="web/js/student.js"></script>
 </body>
+<script src="web/js/student.js"></script>
 </html>
 
