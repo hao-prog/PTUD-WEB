@@ -1,5 +1,5 @@
 <?php 
-    require "../../app/model/admin.php";
+    // require "../../app/model/admin.php";
     $login_idErr = "";
     $login_id = "";
     $reset_password_token = microtime(true);
@@ -16,7 +16,7 @@
             }else {
                 if(selectloginId($login_id)->rowCount() == 1) {
                     updateLoginId($login_id, $reset_password_token); 
-                    header("Location: ../controller/reset_passwordController.php"); 
+                    header("Location: reset.php"); 
                 }else{
                     $login_idErr = "login id không tồn tại trong hệ thống";
                 }
@@ -24,10 +24,5 @@
             }
         }
     }
-
-
-    require_once '../../app/view/request_passwordView.php';
-
-
-                    
+    require_once 'app/view/request_passwordView.php';               
 ?>

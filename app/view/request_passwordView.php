@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../web/css/request_pass.css">
+    <link rel="stylesheet" href="web/css/request_pass.css">
     <title>Request Password</title>
    
 </head>

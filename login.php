@@ -34,8 +34,8 @@
 						value="<?php echo isset($_POST["password"]) ? $_POST["password"] : "" ?>" > 
 				</div>
 
-                <div class="forget-password"><a href="app/controller/request_passwordController.php">Quên password</a></div>
-
+                <!-- <div class="forget-password"><a href="app/controller/request_passwordController.php">Quên password</a></div>  -->
+                <div class="forget-password"><a href="request.php">Quên password</a></div> 
 				<button type="submit" name="submit" value="Submit">Đăng nhập</button>
             </form>
         </div>
