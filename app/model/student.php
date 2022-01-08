@@ -1,5 +1,5 @@
 <?php
-require_once ('app/common/connectionPDO.php');
+require_once ('../../common/connectionPDO.php');
 
 $db = new Database();
 $db->__construct();
