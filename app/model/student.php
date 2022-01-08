@@ -1,5 +1,5 @@
 <?php
-
+require_once __DIR__ . '/../common/connectionPDO.php';
 $db = new Database();
 $db->__construct();
 
@@ -12,7 +12,6 @@ function addStudent($name, $avatar, $description)
     $id = $db->conn->lastInsertId();
     return $id;
 }
-
 function getAll() {
     global $db;
     $sql = "SELECT * FROM students ORDER BY id DESC";
@@ -36,5 +35,24 @@ function delete($id){
     $statement->execute([$id]);
     return $statement;
 }
+function getStudentById($id) {
+    global $db;
+    $sql = "SELECT *
+            FROM students
+            WHERE id = '$id' ";
+    $student = $db->conn->prepare($sql);
+    $student->execute();
+    return $student->fetch();
+}
 
+function updateStudentById($id, $name, $avatar, $description) {
+    global $db;
+    $sql = "UPDATE students SET 
+            name = '$name',
+            avatar = '$avatar',
+            description = '$description'
+            WHERE id = '$id' ";
+    $student = $db->conn->prepare($sql);
+    return $student->execute();
+}
 ?>
