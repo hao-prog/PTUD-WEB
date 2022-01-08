@@ -15,3 +15,9 @@ define('DEGREE_ARR', [
     '004' => 'Phó giáo sư',
     '005' => 'Giáo sư'
 ]);
+$listClass = [
+        'Năm 1'=> 'K 1',
+        'Năm 2'=> 'K 2',
+        'Năm 3'=> 'K 3',
+        'Năm 3'=> 'K 4',
+        ];
