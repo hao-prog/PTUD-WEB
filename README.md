@@ -33,7 +33,7 @@ Quản lý điểm
 
 ## Database schema
 
-![database](/web/qldsv.sql)
+![database](/app/common/qldsv.sql)
 
 ## Rules
 
