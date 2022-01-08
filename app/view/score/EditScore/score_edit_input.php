@@ -5,53 +5,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./web/css/quanlydiem/addScore.css" rel="stylesheet">
-    <title>Add Score</title>
+    <link href="./web/css/score/editScore.css" rel="stylesheet">
+    <title>Edit Score</title>
 </head>
-
 <?php
 
-
-$name_student = $name_subject = $name_teacher  = $comment = '';
-$score = null;
-if (isset($_SESSION["add_student"])) {
-    $name_student = $_SESSION["add_student"];
+if (isset($_SESSION["student"])) {
+    $dataScore[0][1] = $_SESSION["student"];
 }
-if (isset($_SESSION["add_subject"])) {
-    $name_subject = $_SESSION["add_subject"];
+if (isset($_SESSION["teacher"])) {
+    $dataScore[0][2] = $_SESSION["teacher"];
 }
-if (isset($_SESSION["add_teacher"])) {
-    $name_teacher = $_SESSION["add_teacher"];
+if (isset($_SESSION["subject"])) {
+    $dataScore[0][3] = $_SESSION["subject"];
 }
-if (isset($_SESSION["add_score"])) {
-    $score = $_SESSION["add_score"];
+if (isset($_SESSION["score"])) {
+    $dataScore[0][4] = $_SESSION["score"];
 }
-if (isset($_SESSION["add_comment"])) {
-    $comment = $_SESSION["add_comment"];
+if (isset($_SESSION["comment"])) {
+    $dataScore[0][5] = $_SESSION["comment"];
 }
-
-$student_error = $error['student'] ?? '';
-$subject_error = $error['subject'] ?? '';
-$teacher_error = $error['teacher'] ?? '';
-$score_error = $error['score'] ?? '';
-$comment_error = $error['comment'] ?? '';
+if (isset($_GET["id"])) {
+    $_SESSION['ID_SCORE'] = $_GET["id"];
+}
 
 ?>
 
 <body>
-    <form method="POST" action="" class="form_add_score">
-        <fieldset class="form_add_score_fieldset">
-            <div class='error_add_score'>
-                <?php echo $student_error; ?>
+    <form method="POST" action="" class="form_edit_score">
+        <fieldset class="form_edit_score_fieldset">
+            <div class='error_score'>
+                <?php echo isset($error['student']) ? $error['student'] : ''; ?>
+                <?php echo isset($error['subject']) ? $error['subject'] : ''; ?>
+                <?php echo isset($error['teacher']) ? $error['teacher'] : ''; ?>
+                <?php echo isset($error['score']) ? $error['score'] : ''; ?>
+                <?php echo isset($error['comment']) ? $error['comment'] : ''; ?>
             </div>
 
             <div class="student">
                 <label class="student_label">Sinh viên</label>
                 <select class="student_select" id="student" name="student">
-                    <option></option>
                     <?php
                     foreach ($student as $key => $value) {
-                        if ($value['id'] == $name_student) {
+                        if ($value['id'] == $dataScore[0][1]) {
                             echo ' <option value="' . $value['id'] . '" selected >' . $value['name'] . '</option>';
                         } else
                             echo ' <option value="' . $value['id'] . '">' . $value['name'] . '</option>';
@@ -60,17 +56,12 @@ $comment_error = $error['comment'] ?? '';
                 </select>
 
             </div>
-            <div class='error_add_score'>
-                <?php echo $subject_error; ?>
-            </div>
-
             <div class="subject">
                 <label class="subject_label">Môn học</label>
                 <select class="subject_select" id="subject" name="subject">
-                    <option></option>
                     <?php
                     foreach ($subject as $key => $value) {
-                        if ($value['id'] == $name_subject) {
+                        if ($value['id'] == $dataScore[0][3]) {
                             echo ' <option value="' . $value['id'] . '" selected >' . $value['name'] . '</option>';
                         } else
                             echo ' <option value="' . $value['id'] . '">' . $value['name'] . '</option>';
@@ -79,16 +70,13 @@ $comment_error = $error['comment'] ?? '';
                 </select>
 
             </div>
-            <div class='error_add_score'>
-                <?php echo $teacher_error; ?>
-            </div>
+
             <div class="teacher">
                 <label class="teacher_label">Giáo viên</label>
                 <select class="teacher_select" id="teacher" name="teacher">
-                    <option></option>
                     <?php
                     foreach ($teacher as $key => $value) {
-                        if ($value['id'] == $name_teacher) {
+                        if ($value['id'] == $dataScore[0][2]) {
                             echo ' <option value="' . $value['id'] . '" selected >' . $value['name'] . '</option>';
                         } else
                             echo ' <option value="' . $value['id'] . '">' . $value['name'] . '</option>';
@@ -96,38 +84,28 @@ $comment_error = $error['comment'] ?? '';
                     ?>
                 </select>
 
-            </div>
-            <div class='error_add_score'>
-                <?php echo $score_error; ?>
             </div>
             <div class="score">
                 <label class="score_label">Điểm</label>
                 <select class="score_select" id="score" name="score">
-                    <option></option>
                     <?php
                     for ($i = 0; $i <= 10; $i++) {
-                        if ($i == 0 && $score != null && $i == $score) {
-                            echo ' <option value="' . $score . '" selected>' . $score . ' điểm</option>';
-                        }
-                        if ($i == $score && $i != 0) {
-                            echo ' <option value="' . $score . '" selected >' . $score . ' điểm</option>';
+                        if ($i == $dataScore[0][4]) {
+                            echo '<option value="' . $dataScore[0][4] . '" selected>' . $dataScore[0][4] . ' điểm</option>';
                         } else
                             echo '<option value="' . $i . '">' . $i . ' điểm</option>';
                     }
-
                     ?>
                 </select>
             </div>
-            <div class='error_add_score'>
-                <?php echo $comment_error; ?>
-            </div>
+
             <div class="comment">
                 <label class="comment_label">Comment chi tiết</label>
-                <textarea id="comment_text" type="textarea" name="comment" rows="5" cols="40"><?php echo $comment; ?></textarea>
+                <textarea id="comment_text" type="textarea" name="comment" rows="5" cols="40"><?php echo $dataScore[0][5] ?></textarea>
 
             </div>
             <div class="submit">
-                <button class="btnSubmit_add" type="submit" id="submit" name="submitaddScore">Xác nhận</button>
+                <button class="btnSubmit_edit" type="submit" id="submit" name="submitEditScore">Xác nhận</button>
             </div>
         </fieldset>
     </form>

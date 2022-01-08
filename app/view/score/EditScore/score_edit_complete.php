@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="web/css/quanlydiem/editScore.css" rel="stylesheet">
+    <link href="web/css/score/editScore.css" rel="stylesheet">
     <title>Edit Score Complete</title>
 </head>
 

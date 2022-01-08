@@ -10,35 +10,35 @@
     <title>Document</title>
 </head>
 <body>
-<form action="" method="post" class="col-sm-8 form-add-student" enctype="multipart/form-data">
+    <form action="" method="post" class="col-sm-6 form-add-student" enctype="multipart/form-data">
+
         <div class="form-group row">
             <label for="student_name" class="col-sm-4 col-form-label">Họ và tên</label>
-            <div class="col-sm-4">
-                <input type="hidden" name="student_name" value="<?php echo $_SESSION['student_name'] ?>">
-                <label type="text" for="student_name" class="form-control"><?php echo $_SESSION['student_name'] ?></label>
+            <div class="col-sm-5">
+                <input type="text" name="student_name" class="form-control" style="background-color: while;"disabled value="<?php echo $_SESSION['student_name']?>" id="student_name">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="avatar" class="col-sm-4 col-form-label">Avatar</label>
             <div class="col-sm-5">
-                <input type="hidden" id="student_image" name="student_image" value="<?php echo $_SESSION['student_image'] ?>">
-                <img src="web/avatar/tmp/<?php echo $_SESSION['student_image'] ?>" alt="" width="50%" height="auto">
+                <img src="web/avatar/tmp/<?php echo $_SESSION['student_image'] ?>" alt="" width="70%" height="auto">
             </div>
         </div>
 
         <div class="form-group row">
             <label for="description" class="col-sm-4 col-form-label">Mô tả thêm</label>
             <div class="col-sm-7">
-                <input type="hidden" name="student_description" value="<?php echo $_SESSION['student_description'] ?>">
-                <label type="text" for="student_description" class="form-control"><?php echo $_SESSION['student_description'] ?></label>
+                <textarea class="form-control" name="student_description" 
+                    disabled cols="50" rows="5"><?php echo $_SESSION['student_description'] ?></textarea>
             </div>
         </div>
 
         <div class="add-submit">
-            <a onclick="history.back()">Quay lại</a>
+            <input class="button-smt" type="button" onclick="history.back()" value="Sửa lại">
             <input class="button-smt "type="submit" name="student_add_confirm" value="Đăng ký">
         </div>
+
     </form>
 </body>
 </html>
