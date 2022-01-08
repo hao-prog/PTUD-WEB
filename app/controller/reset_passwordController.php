@@ -1,5 +1,4 @@
 <?php
-
 require "../../app/model/admin.php";
 
 //get login_id 
@@ -25,8 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         updateNewPassword($login_id, $pass);
     }
 }
+
      
     require_once '../../app/view/reset_passwordView.php';
+
 
 ?>
     
