@@ -4,7 +4,8 @@
     error_reporting(0);
     include 'access.php';
     expire("");
+    
     require_once 'app/common/connectionPDO.php';
-    include 'app/model/students.php';
+    include 'app/model/student.php';
     include 'app/controller/studentsController/student_add.php';
 ?>
