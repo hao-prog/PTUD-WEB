@@ -42,7 +42,7 @@
   font-size: 20px;
   margin: 32px auto;
   padding: 8px 20px;
-  background-color: #198754;
+  background-color: #4f81bd;
   border-radius: 2px;
   border: 0;
   color: #fff;
@@ -98,11 +98,11 @@ table td {
 }
 
 .btn.btn-delete {
-  background-color: #dc3545;
+  background-color: #4f81bd;
 }
 
 .btn.btn-edit {
-  background-color: #ffc107;
+  background-color: #4f81bd;
 }
 
 @media (max-width: 1024px) {
