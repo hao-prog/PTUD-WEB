@@ -53,7 +53,7 @@
             $_SESSION['student_description'] = $data['student_description'];
 
             // chuyển qua màn hình confirm
-            header("Location: add_student.php?method=add_comfirm");
+            header("Location: add_student.php?method=add_confirm");
 
         }
     }
@@ -90,7 +90,7 @@
 
     // Kiếm tra action và viết điều kiện chuyển view
     switch ($method) {
-        case 'add_comfirm': {
+        case 'add_confirm': {
             require_once('app/view/student/AddStudent/add_student_confirm.php');
             break;
         }

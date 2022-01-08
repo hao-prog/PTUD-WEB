@@ -67,15 +67,18 @@ switch ($action) {
                     } elseif (empty($commentData)) {
                         $error['comment'] = 'Hãy nhập comment chi tiết';
                     } elseif (!$error) {
-                        header("Location: search_score.php?action=edit_comfirm&id={$id}");
+                        header("Location: search_score.php?action=edit_confirm&id={$id}");
                         // exit();
                     }
                 }
             }
+            if (empty($_GET["id"])) {
+                header('location: search_score.php');
+            }
             require_once('app/view/score/EditScore/score_edit_input.php');
             break;
         }
-    case 'edit_comfirm': {
+    case 'edit_confirm': {
             if (isset($_GET["id"])) {
                 session_start();
                 $id = $_GET["id"];
@@ -96,6 +99,9 @@ switch ($action) {
                         header("Location: search_score.php?action=edit_complete&id={$id}");
                     }
                 }
+                if (empty($_SESSION["student"]) || empty($_SESSION["subject"]) || empty($_SESSION["teacher"]) || empty($_SESSION["score"]) || empty($_SESSION["comment"]) || empty($_GET["id"])) {
+                    header('location: search_score.php');
+                }
                 require_once('app/view/score/EditScore/score_edit_confirm.php');
                 break;
             }
@@ -105,6 +111,9 @@ switch ($action) {
                 session_start();
                 $id = $_GET["id"];
                 $student = getAllstudents();
+                if (empty($_SESSION["student"]) || empty($_SESSION["subject"]) || empty($_SESSION["teacher"]) || empty($_SESSION["score"]) || empty($_SESSION["comment"]) || empty($_GET["id"])) {
+                    header('location: search_score.php');
+                }
                 require_once('app/view/score/EditScore/score_edit_complete.php');
                 break;
             }
