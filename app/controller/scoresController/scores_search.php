@@ -67,15 +67,18 @@ switch ($action) {
                     } elseif (empty($commentData)) {
                         $error['comment'] = 'Hãy nhập comment chi tiết';
                     } elseif (!$error) {
-                        header("Location: search_score.php?action=edit_comfirm&id={$id}");
+                        header("Location: search_score.php?action=edit_confirm&id={$id}");
                         // exit();
                     }
                 }
             }
+            if (empty($_GET["id"])) {
+                header('location: search_score.php');
+            }
             require_once('app/view/score/EditScore/score_edit_input.php');
             break;
         }
-    case 'edit_comfirm': {
+    case 'edit_confirm': {
             if (isset($_GET["id"])) {
                 session_start();
                 $id = $_GET["id"];

@@ -20,9 +20,4 @@ class Database
             echo $this->error;
         }
     }
-
-    public function connectionPdo()
-    {
-        $this->stmt = $this->conn->connectionPdo();
-    }
 }

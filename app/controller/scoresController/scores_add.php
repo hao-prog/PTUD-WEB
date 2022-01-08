@@ -33,7 +33,7 @@ if (isset($_POST['submitaddScore'])) {
         $error['comment'] = 'Hãy nhập comment chi tiết';
     }
     if (!$error) {
-        header("Location: add_score.php?action=add_comfirm");
+        header("Location: add_score.php?action=add_confirm");
         // exit();
     }
 }
@@ -45,7 +45,7 @@ if (isset($_GET['action'])) {
     $action = '';
 }
 switch ($action) {
-    case 'add_comfirm': {
+    case 'add_confirm': {
             $student = getAllstudents();
             $teacher = getAllteachers();
             $subject = getAllsubjects();
