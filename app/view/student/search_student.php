@@ -49,7 +49,7 @@
                 <td><?php echo $student['name'] ?> </td>
                 <td><?php echo $student['description'] ?> </td>
                 <td>
-                    <button type="button" class="btn btn-sm btn-primary">Sửa</button>
+                    <a class="btn btn-primary" href="app/view/student_edit/student_edit_input.php?id=<?php echo $student['id']; ?>">Sửa</a>
                     <button type="button" class="btn btn-sm btn-danger" onclick="confirmDelete('<?php echo $student['id'] ?>', '<?php echo $student['name'] ?>')">Xóa</button>
                 </td>
             </tr>
