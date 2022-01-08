@@ -42,3 +42,24 @@ function deleteSubjects($id)
     $delete = $db->conn->prepare($sql);
     $delete->execute();
 }
+function get_subject($id){
+        
+        require '../common/connectDB.php';
+        if($id !=NULL){
+            $sql = "SELECT * FROM `subjects` WHERE id=$id ";
+            $getData = $conn -> prepare($sql);
+            $getData->execute();
+            $getData->setFetchMode(PDO::FETCH_ASSOC); 
+            $resultUser = $getData->fetchAll();
+           return $resultUser;
+        };
+    }
+    function edit_subject($id ,$name, $class, $description, $avatar, $update){
+        require '../common/connectDB.php';
+        if($id !=NULL){
+            $sql = "UPDATE `subjects` SET `name`='$name',`avatar`='$avatar',`description`='$description',`school_year`='$class',`updated`='$update',`created`='' WHERE id=$id";            
+            $update = $conn -> prepare($sql);
+            $update->execute();
+        };
+    }
+

@@ -1,5 +1,5 @@
 function deleteSubject(name, id) {
-    if (confirm(`Bạn chắc chắn muốn xóa môn học ${name}?`)) {
+    if (confirm(`Bạn muốn xóa môn ${name}?`)) {
         window.location = `subject.php?action=delete&id=${id}`;
         return true;
     } else {

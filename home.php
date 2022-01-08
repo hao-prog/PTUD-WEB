@@ -15,11 +15,7 @@
 <body>
     <?php
     $departments = array("Phòng học", "Giáo viên", "Môn học", "Sinh viên", "Điểm");
-$links = array("#link tim phong hoc", "#link them phong hoc", 
-        "app/view/search_teacher.php", "#link them giao vien", 
-        "subject.php", "#link them mon hoc", 
-        "search_student.php", "add_student.php", 
-        "search_score.php", "add_score.php");
+    $links = array("app/view/demo.php", "link2", "link3", "link4", "", "app/view/subject/subject_add_input_view.php", "", "", "search_score.php", "add_score.php");
     ?>
 
     <div class="container">

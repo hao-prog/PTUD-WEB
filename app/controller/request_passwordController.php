@@ -1,5 +1,6 @@
 <?php 
-    // require "../../app/model/admin.php";
+    
+    require "app/model/admin.php";
     $login_idErr = "";
     $login_id = "";
     $reset_password_token = microtime(true);
@@ -15,8 +16,8 @@
                 $login_idErr = "Hãy nhập login id tối thiểu 4 ký tự";
             }else {
                 if(selectloginId($login_id)->rowCount() == 1) {
-                    updateLoginId($login_id, $reset_password_token); 
-                    header("Location: reset.php"); 
+                    updateLoginId($login_id, $reset_password_token);
+                    // header("Location:../../login.php");  
                 }else{
                     $login_idErr = "login id không tồn tại trong hệ thống";
                 }
@@ -24,5 +25,9 @@
             }
         }
     }
-    require_once 'app/view/request_passwordView.php';               
+
+    require_once('app/view/request_passwordView.php');
+
+
+                    
 ?>

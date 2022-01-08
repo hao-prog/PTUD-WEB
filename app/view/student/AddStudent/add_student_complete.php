@@ -12,14 +12,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post" class="col-sm-6 form-add-student">
-
+    <form action="" method="post" class="col-sm-8 form-add-student" enctype="multipart/form-data">
         <p style="text-align:center">Bạn đã đăng kí thành công sinh viên</p>
-        
         <div style="text-align:center" >
-            <a href="home.php">Trở về trang chủ</a>
+            <a href="">Trở về trang chủ</a>
         </div>
-
     </form>
 
     <!-- jQuery library -->
