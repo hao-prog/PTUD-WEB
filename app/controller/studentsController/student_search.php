@@ -1,5 +1,4 @@
 <?php
-require_once ('../../model/student.php');
 
 $statement = getAll();
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -20,12 +19,13 @@ switch ($action) {
         if (isset($_GET["id"])) {
             $id = $_GET["id"];
             delete($id);
-            header('location: student_search.php');
+            header('location: search_student.php');
+
         }
         break;
     }
     default: {
-        require_once('../../view/student/search_student.php');
+        require_once('app/view/student/search_student.php');
         break;
     }
 }

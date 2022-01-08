@@ -18,7 +18,7 @@
     $links = array("link tim phong hoc", "link them phong hoc", 
         "app/view/search_teacher.php", "app/view/teacher_edit/teacher_edit_input.php", 
         "subject.php", "link them mon hoc", 
-        "app/view/students/searchStudent.php", "add_student.php", 
+        "search_student.php", "add_student.php",
         "search_score.php", "add_score.php");
     ?>
 
