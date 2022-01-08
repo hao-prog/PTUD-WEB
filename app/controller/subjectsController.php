@@ -21,7 +21,7 @@ switch ($action) {
             if (isset($_GET["id"])) {
                 $id = $_GET["id"];
                 deleteSubjects($id);
-                header("Location: subject.php");
+                header("Location: subject.php?school_year=$schoolYear&search=$keyword");
             }
             break;
         }
