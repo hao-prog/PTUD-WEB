@@ -2,7 +2,7 @@
     $data = array(); //tạo mảng chứa dữ liệu
     $error = array(); //tạo mảng chứa lỗi validate
 
-    // chọn nút ở màn hình input
+    // chọn nút xác nhận ở màn hình input
     if (isset($_POST['student_add'])) { 
 
         // lấy dữ liệu từ form == phương thức POST
@@ -57,7 +57,7 @@
 
         }
     }
-    // chọn nút ở màn hình confirm
+    // chọn nút đăng ký ở màn hình confirm
     if (isset($_POST['student_add_confirm'])) {
 
         // Thêm dữ liệu vào database đồng thời lấy id của nó ra
@@ -81,8 +81,7 @@
         // chuyển sang màn hình complete
         header("Location: add_student.php?method=add_complete");
     }
-
-    // Lấy param action trong url
+    // Lấy param method trong url
     if (isset($_GET['method'])) {
         $method = $_GET['method'];
     } else {
@@ -104,5 +103,6 @@
             break;
         }
     }
+    
     
 ?>

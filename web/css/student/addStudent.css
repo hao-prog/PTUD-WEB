@@ -2,16 +2,17 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
 }
-.form-add-student {
+.form-student-confirm {
+  height: 500px;
+}
+.fieldset-student-add {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 0px;
   padding: 50px;
   border: 2px solid #5b7feb;
   background-color: aliceblue;
 }
-.form-group {
-  margin-bottom: 2rem;
-}
+
 .button-smt {
   background-color: #7492eb;
   border: 1px solid #5b7feb;

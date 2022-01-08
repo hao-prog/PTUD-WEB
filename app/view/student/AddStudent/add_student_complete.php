@@ -12,14 +12,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post" class="col-sm-6 form-add-student">
-
-        <p style="text-align:center">Bạn đã đăng kí thành công sinh viên</p>
-        
-        <div style="text-align:center" >
-            <a href="home.php">Trở về trang chủ</a>
-        </div>
-
+    <form action="" method="post">
+        <fieldset class="fieldset-student-add col-sm-6 ">
+            <legend style="width:unset;font-size: 30px;font-weight: bold;text-shadow: 0 0 3px #FF0000, 0 0 5px #FF0000;">Hoàn thành</legend>
+            <p style="text-align:center">Bạn đã đăng kí thành công sinh viên</p>
+            <div style="text-align:center" >
+                <a href="home.php">Trở về trang chủ</a>
+            </div>
+        </fieldset>
     </form>
 
     <!-- jQuery library -->
